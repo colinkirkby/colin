@@ -43,7 +43,7 @@ export function Client() {
         <AnalyticsCardVertical
           imagePath="logo.png"
           headerText="Hi I'm Colin"
-          bodyText="This is a collection of some of my work"
+          bodyText="This is a collection of some of my work I hope you enjoy"
           footerText=""
         />
       )}
