@@ -23,6 +23,7 @@ export function Client() {
     // Cleanup function to remove the event listener
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const { Meta } = Card;
   return (
     <Col
       style={{
@@ -33,14 +34,14 @@ export function Client() {
     >
       {!isMobile ? (
         <AnalyticsCardButtonLeft
-          imagePath="banner.png"
+          imagePath="logo.png"
           headerText="Hi I'm Colin"
           bodyText="This is a collection of some of my work"
           footerText=""
         />
       ) : (
         <AnalyticsCardVertical
-          imagePath="banner.png"
+          imagePath="logo.png"
           headerText="Hi I'm Colin"
           bodyText="This is a collection of some of my work"
           footerText=""
@@ -57,19 +58,23 @@ export function Client() {
         <Col className="m-10">
           <a href="https://ufreecalendar.vercel.app/">
             <Card
-              title="calendar application"
+              hoverable
               style={{ width: "300px", height: "300px" }}
               cover={<img src="/ufree.png" alt="streamline" />}
-            ></Card>
+            >
+              <Meta title="calendar application" />
+            </Card>
           </a>
         </Col>
         <Col className="m-10">
           <a href="https://stream-line.vercel.app/">
             <Card
-              title="StreamLine application WIP"
+              hoverable
               style={{ width: "300px", height: "300px" }}
               cover={<img src="/bannersquare.png" alt="streamline" />}
-            ></Card>
+            >
+              <Meta title="StreamLine application WIP" />
+            </Card>
           </a>
         </Col>
       </Row>
@@ -83,19 +88,24 @@ export function Client() {
         <Col className="m-10">
           <a href="https://portable-electric.com/neuron-os/">
             <Card
-              title="Portable Electric Neuron os"
+              hoverable
               style={{ width: "300px", height: "300px" }}
               cover={<img src="/portable.png" alt="streamline" />}
-            ></Card>
+            >
+              {" "}
+              <Meta title="Portable Electric Neuron os" />
+            </Card>
           </a>
         </Col>
         <Col className="m-10">
           <a href="https://www.builddirect.com/">
             <Card
-              title="Build Direct Technologies"
+              hoverable
               style={{ width: "300px", height: "300px" }}
               cover={<img src="/build.png" alt="streamline" />}
-            ></Card>
+            >
+              <Meta title="Build Direct Technologies" />
+            </Card>
           </a>
         </Col>
       </Row>
