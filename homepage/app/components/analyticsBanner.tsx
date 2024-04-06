@@ -69,7 +69,8 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
         border: "none",
         boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
         paddingTop: "120px",
-        marginBottom: "30px"
+        marginBottom: "30px",
+        minHeight: "854px"
       }}
       cover={<img src={imagePath} alt={headerText} style={{ width: "100%" }} />}
     >

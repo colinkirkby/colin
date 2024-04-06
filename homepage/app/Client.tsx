@@ -1,11 +1,13 @@
 import { Card, Col, Row } from "antd";
+import { motion, useInView, useAnimation } from "framer-motion";
 import Image from "next/image";
 import {
   AnalyticsCardButtonLeft,
   AnalyticsCardVertical
 } from "./components/analyticsBanner";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useDeviceDetection from "./hooks/UseDetection";
+import AnimatedCard from "./components/animatedCard";
 
 const mobileStyle = {
   width: "300px",
@@ -21,9 +23,149 @@ const imgStyle = {
 
 export function Client() {
   const [isMobile, setIsMobile] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+  const ref4 = useRef(null);
+  const isInView1 = useInView(ref1, { once: false });
+  const isInView2 = useInView(ref2, { once: false });
+  const isInView3 = useInView(ref3, { once: false });
+  const isInView4 = useInView(ref4, { once: false });
+  const control1 = useAnimation();
+  const control2 = useAnimation();
+  const control3 = useAnimation();
+  const control4 = useAnimation();
+
   const handleResize = () => {
     setIsMobile(window.innerWidth < 720); // Set to true if width is less than 720
   };
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          // Check if the element is in the viewport
+          if (entry.isIntersecting) {
+            // Trigger the animation
+            control1.start("visible");
+            console.log("1 should be visible");
+          } else {
+            // Optionally reset the animation state when the element goes out of view
+            console.log("1 should be hidden");
+            control1.start("hidden");
+          }
+        });
+      },
+      {
+        // Adjust the threshold and rootMargin to control when the callback is executed
+        threshold: 1 // Trigger when 10% of the element is in view
+      }
+    );
+
+    if (ref1.current) {
+      observer.observe(ref1.current);
+    }
+
+    return () => {
+      if (ref1.current) {
+        observer.unobserve(ref1.current);
+      }
+    };
+  }, [control1]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          // Check if the element is in the viewport
+          if (entry.isIntersecting) {
+            // Trigger the animation
+            control2.start("visible");
+          } else {
+            // Optionally reset the animation state when the element goes out of view
+            control2.start("hidden");
+          }
+        });
+      },
+      {
+        // Adjust the threshold and rootMargin to control when the callback is executed
+        threshold: 0.8 // Trigger when 10% of the element is in view
+      }
+    );
+
+    if (ref2.current) {
+      observer.observe(ref2.current);
+    }
+
+    return () => {
+      if (ref2.current) {
+        observer.unobserve(ref2.current);
+      }
+    };
+  }, [control2]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          // Check if the element is in the viewport
+          if (entry.isIntersecting) {
+            // Trigger the animation
+            control3.start("visible");
+          } else {
+            // Optionally reset the animation state when the element goes out of view
+            control3.start("hidden");
+          }
+        });
+      },
+      {
+        // Adjust the threshold and rootMargin to control when the callback is executed
+        threshold: 0.8 // Trigger when 10% of the element is in view
+      }
+    );
+
+    if (ref3.current) {
+      observer.observe(ref3.current);
+    }
+
+    return () => {
+      if (ref3.current) {
+        observer.unobserve(ref3.current);
+      }
+    };
+  }, [control3]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          // Check if the element is in the viewport
+          if (entry.isIntersecting) {
+            // Trigger the animation
+            control4.start("visible");
+          } else {
+            // Optionally reset the animation state when the element goes out of view
+            control4.start("hidden");
+          }
+        });
+      },
+      {
+        // Adjust the threshold and rootMargin to control when the callback is executed
+        threshold: 0.8 // Trigger when 10% of the element is in view
+      }
+    );
+
+    if (ref4.current) {
+      observer.observe(ref4.current);
+    }
+
+    return () => {
+      if (ref4.current) {
+        observer.unobserve(ref4.current);
+      }
+    };
+  }, [control4]);
+
   const device = useDeviceDetection();
   useEffect(() => {
     if (device == "Mobile") {
@@ -38,62 +180,129 @@ export function Client() {
   return (
     <Col
       style={{
-        width: "1000px",
         justifyContent: "center",
         alignItems: "center",
-        paddingBottom: "400px"
+        paddingBottom: "100px"
       }}
     >
       {!isMobile ? (
-        <AnalyticsCardButtonLeft
-          imagePath="logo.png"
-          headerText="Colin's Portfolio"
-          bodyText="This is a collection of some of my work"
-          footerText=""
-        />
+        <div style={{ height: 1000 }}>
+          <AnalyticsCardButtonLeft
+            imagePath="logo.png"
+            headerText="Colin's Portfolio"
+            bodyText="This is a collection of some of my work"
+            footerText=""
+          />
+        </div>
       ) : (
-        <AnalyticsCardVertical
-          imagePath="logoMobile.png"
-          headerText="Colin's Portfolio"
-          bodyText="This is a collection of some of my work"
-          footerText=""
-        />
+        <div style={{ height: 1000 }}>
+          <AnalyticsCardVertical
+            imagePath="logoMobile.png"
+            headerText="Colin's Portfolio"
+            bodyText="This is a collection of some of my work"
+            footerText=""
+          />
+        </div>
       )}
-
-      <h1
-        className="font-mono font-bold text-black"
-        style={{ marginLeft: "10px" }}
-      >
-        Personal Projects
-      </h1>
+      <div>
+        <h1
+          className="font-mono font-bold text-black"
+          style={{ marginLeft: "10px", fontSize: "35px" }}
+        >
+          Personal Projects
+        </h1>
+      </div>
       <Row justify="space-around" style={{ padding: "20px" }}>
         <Col className="m-10">
-          <a href="https://stream-line.vercel.app/">
-            <Card
-              hoverable
-              style={mobileStyle}
-              cover={
-                <img
-                  src="/bannersquare.png"
-                  alt="streamline"
-                  style={imgStyle}
-                />
-              }
+          <div ref={ref1} style={{ position: "relative", marginBottom: 30 }}>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 0, x: 400 },
+                visible: { opacity: 1, y: 0, x: 0 }
+              }}
+              initial="hidden"
+              animate={control1}
+              transition={{ duration: 0.5, delay: 0 }}
             >
-              <Meta title="StreamLine application WIP" />
-            </Card>
-          </a>
+              <a href="https://stream-line.vercel.app/">
+                <Card
+                  hoverable
+                  style={mobileStyle}
+                  cover={
+                    <img
+                      src="/bannersquare.png"
+                      alt="streamline"
+                      style={imgStyle}
+                    />
+                  }
+                >
+                  <Meta title="StreamLine application WIP" />
+                </Card>
+              </a>
+            </motion.div>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 75 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              initial="hidden"
+              animate={control1}
+              transition={{ duration: 0.5, delay: 0 }}
+            >
+              <p
+                style={{ marginTop: "20px" }}
+                className="font-mono font-bold font text-black"
+              >
+                {
+                  "  A work in progress saas project designed using aws cloud services and nextjs. Intended to simplyfy retail workspaces and bring valueto managment teams"
+                }
+              </p>
+            </motion.div>
+          </div>
         </Col>
+
         <Col className="m-10">
-          <a href="https://ufreecalendar.vercel.app/">
-            <Card
-              hoverable
-              style={mobileStyle}
-              cover={<img src="/ufree.png" alt="streamline" style={imgStyle} />}
+          <div ref={ref2} style={{ position: "relative" }}>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 0, x: 400 },
+                visible: { opacity: 1, y: 0, x: 0 }
+              }}
+              initial="hidden"
+              animate={control2}
+              transition={{ duration: 0.5, delay: 0 }}
             >
-              <Meta title="calendar application" />
-            </Card>
-          </a>
+              <a href="https://ufreecalendar.vercel.app/">
+                <Card
+                  hoverable
+                  style={mobileStyle}
+                  cover={
+                    <img src="/ufree.png" alt="streamline" style={imgStyle} />
+                  }
+                >
+                  <Meta title="calendar application" />
+                </Card>
+              </a>
+            </motion.div>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 75 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              initial="hidden"
+              animate={control2}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <p
+                style={{ marginTop: "20px" }}
+                className="font-mono font-bold font text-black"
+              >
+                {
+                  "A simple type script based calendar application leveraging browser storage. This was meant as a project to learn TypeScript and build more complicated functional UI"
+                }
+              </p>
+            </motion.div>
+          </div>
         </Col>
       </Row>
       <h1
@@ -104,29 +313,95 @@ export function Client() {
       </h1>
       <Row justify="space-around">
         <Col className="m-10">
-          <a href="https://portable-electric.com/neuron-os/">
-            <Card
-              hoverable
-              style={mobileStyle}
-              cover={
-                <img src="/portable1.png" alt="streamline" style={imgStyle} />
-              }
+          <div ref={ref3} style={{ position: "relative" }}>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 0, x: 400 },
+                visible: { opacity: 1, y: 0, x: 0 }
+              }}
+              initial="hidden"
+              animate={control3}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
-              {" "}
-              <Meta title="Portable Electric Neuron os" />
-            </Card>
-          </a>
+              <a href="https://portable-electric.com/neuron-os/">
+                <Card
+                  hoverable
+                  style={mobileStyle}
+                  cover={
+                    <img
+                      src="/portable1.png"
+                      alt="streamline"
+                      style={imgStyle}
+                    />
+                  }
+                >
+                  {" "}
+                  <Meta title="Portable Electric Neuron os" />
+                </Card>
+              </a>
+            </motion.div>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 75 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              initial="hidden"
+              animate={control3}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <p
+                style={{ marginTop: "20px" }}
+                className="font-mono font-bold font text-black"
+              >
+                {
+                  "My first co-op position. I built a React based javascript application using aws serverless services. This application allowed for easy deployment and rental managment of the companies portable battery units."
+                }
+              </p>
+            </motion.div>
+          </div>
         </Col>
         <Col className="m-10">
-          <a href="https://www.builddirect.com/">
-            <Card
-              hoverable
-              style={mobileStyle}
-              cover={<img src="/build.png" alt="streamline" style={imgStyle} />}
+          <div ref={ref4} style={{ position: "relative" }}>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 0, x: 400 },
+                visible: { opacity: 1, y: 0, x: 0 }
+              }}
+              initial="hidden"
+              animate={control4}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Meta title="Build Direct Technologies" />
-            </Card>
-          </a>
+              <a href="https://www.builddirect.com/">
+                <Card
+                  hoverable
+                  style={mobileStyle}
+                  cover={
+                    <img src="/build.png" alt="streamline" style={imgStyle} />
+                  }
+                >
+                  <Meta title="Build Direct Technologies" />
+                </Card>
+              </a>
+            </motion.div>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 75 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              initial="hidden"
+              animate={control4}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <p
+                style={{ marginTop: "20px" }}
+                className="font-mono font-bold font text-black"
+              >
+                {
+                  "My second Co-op position. I worked as a full stack developer maintaining build directs online storefront. My main accomplisment from my work there was assisting in launching a revamped version of their webpage rebuilt to leverage the new next js feature set. Bringing page load times down 90% to 1-2 seconds per page. "
+                }
+              </p>
+            </motion.div>
+          </div>
         </Col>
       </Row>
     </Col>
