@@ -1,4 +1,4 @@
-import { Card, Col, Row } from "antd";
+import { Button, Card, Col, Row } from "antd";
 import { motion, useInView, useAnimation } from "framer-motion";
 import Image from "next/image";
 import {
@@ -13,6 +13,7 @@ const mobileStyle = {
   width: "300px",
   height: "300px",
   border: "none",
+  margin: "auto",
   boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)"
 };
 const imgStyle = {
@@ -24,14 +25,13 @@ const imgStyle = {
 export function Client() {
   const [isMobile, setIsMobile] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
+  const ref = useRef(null);
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
   const ref4 = useRef(null);
-  const isInView1 = useInView(ref1, { once: false });
-  const isInView2 = useInView(ref2, { once: false });
-  const isInView3 = useInView(ref3, { once: false });
-  const isInView4 = useInView(ref4, { once: false });
+
+  const control = useAnimation();
   const control1 = useAnimation();
   const control2 = useAnimation();
   const control3 = useAnimation();
@@ -43,6 +43,40 @@ export function Client() {
   useEffect(() => {
     setHasMounted(true);
   }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          // Check if the element is in the viewport
+          if (entry.isIntersecting) {
+            // Trigger the animation
+            control.start("visible");
+            console.log("0 should be visible");
+          } else {
+            // Optionally reset the animation state when the element goes out of view
+            console.log("0 should be hidden");
+            control.start("hidden");
+          }
+        });
+      },
+      {
+        // Adjust the threshold and rootMargin to control when the callback is executed
+        threshold: 1 // Trigger when 10% of the element is in view
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [control]);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -75,6 +109,7 @@ export function Client() {
       }
     };
   }, [control1]);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -186,29 +221,45 @@ export function Client() {
       }}
     >
       {!isMobile ? (
-        <div style={{ height: 1000 }}>
-          <AnalyticsCardButtonLeft
-            imagePath="logo.png"
-            headerText="Colin's Portfolio"
-            bodyText="This is a collection of some of my work"
-            footerText=""
-          />
-        </div>
+        <AnalyticsCardButtonLeft
+          imagePath="logo.png"
+          headerText="Colin's Portfolio"
+          bodyText="This is a collection of some of my work"
+          footerText=""
+        />
       ) : (
-        <div style={{ height: 1000 }}>
-          <AnalyticsCardVertical
-            imagePath="logoMobile.png"
-            headerText="Colin's Portfolio"
-            bodyText="This is a collection of some of my work"
-            footerText=""
-          />
-        </div>
+        <AnalyticsCardVertical
+          imagePath="logoMobile.png"
+          headerText="Colin's Portfolio"
+          bodyText="Welcome"
+          footerText="This is a collection of some of my work"
+        />
       )}
-      <div>
-        <h1
-          className="font-mono font-bold text-black"
-          style={{ marginLeft: "10px", fontSize: "35px" }}
+      <div ref={ref} style={{ textAlign: "center", marginBottom: "40px" }}>
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 75, scale: 0.7 },
+            visible: { opacity: 1, y: 0, scale: 1 }
+          }}
+          initial="hidden"
+          animate={control}
+          transition={{ duration: 0.7, delay: 0.1 }}
         >
+          <h1 className=" text-black" style={{ fontSize: "30px" }}>
+            About Me
+          </h1>
+          <p
+            style={{ marginTop: "20px", textAlign: "center" }}
+            className=" text-black"
+          >
+            {
+              "Full stack software engineer located in Vancouver, British Columbia. Recent graduate of Simon Fraser University with a Bachelor of Science in Computer Science and Software Engineering. Specialized in JavaScript and typescript React development with prior experience in building customer-facing applications."
+            }
+          </p>
+        </motion.div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <h1 className=" text-black" style={{ fontSize: "30px" }}>
           Personal Projects
         </h1>
       </div>
@@ -222,7 +273,7 @@ export function Client() {
               }}
               initial="hidden"
               animate={control1}
-              transition={{ duration: 0.5, delay: 0 }}
+              transition={{ duration: 0.7, delay: 0 }}
             >
               <a href="https://stream-line.vercel.app/">
                 <Card
@@ -242,17 +293,14 @@ export function Client() {
             </motion.div>
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 75 },
-                visible: { opacity: 1, y: 0 }
+                hidden: { opacity: 0, y: 75, scale: 0.7 },
+                visible: { opacity: 1, y: 0, scale: 1 }
               }}
               initial="hidden"
               animate={control1}
-              transition={{ duration: 0.5, delay: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
             >
-              <p
-                style={{ marginTop: "20px" }}
-                className="font-mono font-bold font text-black"
-              >
+              <p style={{ marginTop: "20px" }} className=" text-black">
                 {
                   "  A work in progress saas project designed using aws cloud services and nextjs. Intended to simplyfy retail workspaces and bring valueto managment teams"
                 }
@@ -270,7 +318,7 @@ export function Client() {
               }}
               initial="hidden"
               animate={control2}
-              transition={{ duration: 0.5, delay: 0 }}
+              transition={{ duration: 0.7, delay: 0 }}
             >
               <a href="https://ufreecalendar.vercel.app/">
                 <Card
@@ -286,16 +334,16 @@ export function Client() {
             </motion.div>
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 75 },
-                visible: { opacity: 1, y: 0 }
+                hidden: { opacity: 0, y: 75, scale: 0.7 },
+                visible: { opacity: 1, y: 0, scale: 1 }
               }}
               initial="hidden"
               animate={control2}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
             >
               <p
-                style={{ marginTop: "20px" }}
-                className="font-mono font-bold font text-black"
+                style={{ marginTop: "20px", textAlign: "center" }}
+                className=" text-black"
               >
                 {
                   "A simple type script based calendar application leveraging browser storage. This was meant as a project to learn TypeScript and build more complicated functional UI"
@@ -305,12 +353,11 @@ export function Client() {
           </div>
         </Col>
       </Row>
-      <h1
-        className="font-mono font-bold font text-black"
-        style={{ marginLeft: "10px" }}
-      >
-        Previous Company Work
-      </h1>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <h1 className=" text-black" style={{ fontSize: "30px" }}>
+          Previous Company Work
+        </h1>
+      </div>
       <Row justify="space-around">
         <Col className="m-10">
           <div ref={ref3} style={{ position: "relative" }}>
@@ -321,7 +368,7 @@ export function Client() {
               }}
               initial="hidden"
               animate={control3}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
             >
               <a href="https://portable-electric.com/neuron-os/">
                 <Card
@@ -342,16 +389,16 @@ export function Client() {
             </motion.div>
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 75 },
-                visible: { opacity: 1, y: 0 }
+                hidden: { opacity: 0, y: 75, scale: 0.7 },
+                visible: { opacity: 1, y: 0, scale: 1 }
               }}
               initial="hidden"
               animate={control3}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0 }}
             >
               <p
-                style={{ marginTop: "20px" }}
-                className="font-mono font-bold font text-black"
+                style={{ marginTop: "20px", textAlign: "center" }}
+                className=" text-black"
               >
                 {
                   "My first co-op position. I built a React based javascript application using aws serverless services. This application allowed for easy deployment and rental managment of the companies portable battery units."
@@ -369,7 +416,7 @@ export function Client() {
               }}
               initial="hidden"
               animate={control4}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
             >
               <a href="https://www.builddirect.com/">
                 <Card
@@ -385,25 +432,35 @@ export function Client() {
             </motion.div>
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 75 },
-                visible: { opacity: 1, y: 0 }
+                hidden: { opacity: 0, y: 75, scale: 0.7 },
+                visible: { opacity: 1, y: 0, scale: 1 }
               }}
               initial="hidden"
               animate={control4}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
             >
               <p
-                style={{ marginTop: "20px" }}
-                className="font-mono font-bold font text-black"
+                style={{ marginTop: "20px", textAlign: "center" }}
+                className="text-black"
               >
                 {
                   "My second Co-op position. I worked as a full stack developer maintaining build directs online storefront. My main accomplisment from my work there was assisting in launching a revamped version of their webpage rebuilt to leverage the new next js feature set. Bringing page load times down 90% to 1-2 seconds per page. "
                 }
               </p>
+              {isMobile && (
+                <Row justify="center" style={{ marginTop: "50px" }}>
+                  <Button type="primary"> Visit My Linked In</Button>
+                </Row>
+              )}
             </motion.div>
           </div>
         </Col>
       </Row>
+      {!isMobile && (
+        <Row justify="center" style={{ marginTop: "30px" }}>
+          <Button type="primary"> Visit My Linked In</Button>
+        </Row>
+      )}
     </Col>
   );
 }
