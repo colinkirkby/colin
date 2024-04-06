@@ -8,6 +8,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import useDeviceDetection from "./hooks/UseDetection";
 import AnimatedCard from "./components/animatedCard";
+import Link from "next/link";
 
 const mobileStyle = {
   width: "300px",
@@ -236,7 +237,14 @@ export function Client() {
           footerText="This is a collection of some of my work"
         />
       )}
-      <div ref={ref} style={{ textAlign: "center", marginBottom: "40px" }}>
+      <div
+        ref={ref}
+        style={{
+          textAlign: "center",
+          marginBottom: "100px",
+          marginTop: "100px"
+        }}
+      >
         <motion.div
           variants={{
             hidden: { opacity: 0, y: 75, scale: 0.7 },
@@ -354,7 +362,13 @@ export function Client() {
           </div>
         </Col>
       </Row>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "150px"
+        }}
+      >
         <h1 className=" text-black" style={{ fontSize: "30px" }}>
           Previous Company Work
         </h1>
@@ -450,7 +464,9 @@ export function Client() {
               </p>
               {isMobile && (
                 <Row justify="center" style={{ marginTop: "50px" }}>
-                  <Button type="primary"> Visit My Linked In</Button>
+                  <a href="https://www.linkedin.com/in/colin-kirkby-253909178">
+                    <Button type="primary"> Visit My Linked In</Button>
+                  </a>
                 </Row>
               )}
             </motion.div>
@@ -459,7 +475,9 @@ export function Client() {
       </Row>
       {!isMobile && (
         <Row justify="center" style={{ marginTop: "30px" }}>
-          <Button type="primary"> Visit My Linked In</Button>
+          <a href="https://www.linkedin.com/in/colin-kirkby-253909178">
+            <Button type="primary"> Visit My Linked In</Button>
+          </a>
         </Row>
       )}
     </Col>
