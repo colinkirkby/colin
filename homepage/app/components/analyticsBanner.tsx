@@ -68,8 +68,10 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
         width: "100%",
         border: "none",
         boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
+        paddingTop: "120px",
         marginBottom: "30px"
       }}
+      cover={<img src={imagePath} alt={headerText} style={{ width: "100%" }} />}
     >
       <div
         style={{
@@ -85,16 +87,17 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-
+            marginTop: "40px",
             paddingInline: "40px"
           }}
         >
           <h1 className="text-xl">{headerText}</h1>
-          <p>{bodyText}</p>
+          <p style={{ marginTop: "40px", marginBottom: "20px" }}>{bodyText}</p>
 
-          <p style={{ marginTop: "1rem" }}>{footerText}</p>
+          <p style={{ marginTop: "20px", marginBottom: "20px" }}>
+            {footerText}
+          </p>
         </div>
-        <img src={imagePath} alt={headerText} style={{ width: "60%" }} />
       </div>
     </Card>
   );

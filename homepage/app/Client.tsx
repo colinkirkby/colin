@@ -5,44 +5,56 @@ import {
   AnalyticsCardVertical
 } from "./components/analyticsBanner";
 import { useEffect, useState } from "react";
+import useDeviceDetection from "./hooks/UseDetection";
+
+const mobileStyle = {
+  width: "300px",
+  height: "300px",
+  border: "none",
+  boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)"
+};
+const imgStyle = {
+  overflow: "hidden",
+  paddingLeft: "1px",
+  paddingRight: "1px"
+};
 
 export function Client() {
   const [isMobile, setIsMobile] = useState(false);
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 720); // Set to true if width is less than 720
+  };
+  const device = useDeviceDetection();
   useEffect(() => {
-    // Define a function to update the state based on the window's width
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 720); // Set to true if width is less than 720
-    };
+    if (device == "Mobile") {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, [device]);
 
-    // Call handleResize on mount to set the initial value
-    handleResize();
-
-    // Add event listener for subsequent resize events
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup function to remove the event listener
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   const { Meta } = Card;
+
   return (
     <Col
       style={{
         width: "1000px",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        paddingBottom: "400px"
       }}
     >
       {!isMobile ? (
         <AnalyticsCardButtonLeft
           imagePath="logo.png"
-          headerText="Hi I'm Colin"
+          headerText="Colin's Portfolio"
           bodyText="This is a collection of some of my work"
           footerText=""
         />
       ) : (
         <AnalyticsCardVertical
-          imagePath="logo.png"
-          headerText="Hi I'm Colin"
+          imagePath="logoMobile.png"
+          headerText="Colin's Portfolio"
           bodyText="This is a collection of some of my work"
           footerText=""
         />
@@ -56,24 +68,30 @@ export function Client() {
       </h1>
       <Row justify="space-around" style={{ padding: "20px" }}>
         <Col className="m-10">
-          <a href="https://ufreecalendar.vercel.app/">
+          <a href="https://stream-line.vercel.app/">
             <Card
               hoverable
-              style={{ width: "300px", height: "300px" }}
-              cover={<img src="/ufree.png" alt="streamline" />}
+              style={mobileStyle}
+              cover={
+                <img
+                  src="/bannersquare.png"
+                  alt="streamline"
+                  style={imgStyle}
+                />
+              }
             >
-              <Meta title="calendar application" />
+              <Meta title="StreamLine application WIP" />
             </Card>
           </a>
         </Col>
         <Col className="m-10">
-          <a href="https://stream-line.vercel.app/">
+          <a href="https://ufreecalendar.vercel.app/">
             <Card
               hoverable
-              style={{ width: "300px", height: "300px" }}
-              cover={<img src="/bannersquare.png" alt="streamline" />}
+              style={mobileStyle}
+              cover={<img src="/ufree.png" alt="streamline" style={imgStyle} />}
             >
-              <Meta title="StreamLine application WIP" />
+              <Meta title="calendar application" />
             </Card>
           </a>
         </Col>
@@ -89,8 +107,10 @@ export function Client() {
           <a href="https://portable-electric.com/neuron-os/">
             <Card
               hoverable
-              style={{ width: "300px", height: "300px" }}
-              cover={<img src="/portable.png" alt="streamline" />}
+              style={mobileStyle}
+              cover={
+                <img src="/portable1.png" alt="streamline" style={imgStyle} />
+              }
             >
               {" "}
               <Meta title="Portable Electric Neuron os" />
@@ -101,8 +121,8 @@ export function Client() {
           <a href="https://www.builddirect.com/">
             <Card
               hoverable
-              style={{ width: "300px", height: "300px" }}
-              cover={<img src="/build.png" alt="streamline" />}
+              style={mobileStyle}
+              cover={<img src="/build.png" alt="streamline" style={imgStyle} />}
             >
               <Meta title="Build Direct Technologies" />
             </Card>
