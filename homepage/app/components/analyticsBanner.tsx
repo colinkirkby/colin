@@ -91,7 +91,7 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            marginTop: "250px",
+            marginTop: "100px",
             paddingInline: "40px"
           }}
         >
@@ -117,7 +117,7 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
             exit={{ opacity: 0 }}
             transition={{ duration: 1, delay: 2.5 }}
           >
-            <p style={{ marginTop: "400px", marginBottom: "20px" }}>
+            <p style={{ marginTop: "150px", marginBottom: "20px" }}>
               {bodyText}
             </p>
           </motion.div>
@@ -131,7 +131,7 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
             exit={{ opacity: 0 }}
             transition={{ duration: 1, delay: 3.5 }}
           >
-            <p style={{ marginTop: "100px", marginBottom: "100px" }}>
+            <p style={{ marginTop: "50px", marginBottom: "100px" }}>
               {footerText}
             </p>
           </motion.div>
