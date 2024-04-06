@@ -252,7 +252,7 @@ export function Client() {
           }}
           initial="hidden"
           animate={control}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 1.5, delay: 0 }}
         >
           <h1 className=" text-black" style={{ fontSize: "30px" }}>
             About Me
@@ -282,7 +282,7 @@ export function Client() {
               }}
               initial="hidden"
               animate={control1}
-              transition={{ duration: 0.7, delay: 0 }}
+              transition={{ duration: 1.2, delay: 0 }}
             >
               <a href="https://stream-line.vercel.app/">
                 <Card
@@ -307,7 +307,7 @@ export function Client() {
               }}
               initial="hidden"
               animate={control1}
-              transition={{ duration: 0.7, delay: 0.1 }}
+              transition={{ duration: 1.2, delay: 0.1 }}
             >
               <p style={{ marginTop: "20px" }} className=" text-black">
                 {
@@ -327,7 +327,7 @@ export function Client() {
               }}
               initial="hidden"
               animate={control2}
-              transition={{ duration: 0.7, delay: 0 }}
+              transition={{ duration: 1.2, delay: 0 }}
             >
               <a href="https://ufreecalendar.vercel.app/">
                 <Card
@@ -348,7 +348,7 @@ export function Client() {
               }}
               initial="hidden"
               animate={control2}
-              transition={{ duration: 0.7, delay: 0.1 }}
+              transition={{ duration: 1.2, delay: 0.1 }}
             >
               <p
                 style={{ marginTop: "20px", textAlign: "center" }}
@@ -383,7 +383,7 @@ export function Client() {
               }}
               initial="hidden"
               animate={control3}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 1.2, delay: 0.2 }}
             >
               <a href="https://portable-electric.com/neuron-os/">
                 <Card
@@ -409,7 +409,7 @@ export function Client() {
               }}
               initial="hidden"
               animate={control3}
-              transition={{ duration: 0.7, delay: 0 }}
+              transition={{ duration: 1.2, delay: 0 }}
             >
               <p
                 style={{ marginTop: "20px", textAlign: "center" }}
@@ -431,7 +431,7 @@ export function Client() {
               }}
               initial="hidden"
               animate={control4}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 1.2, delay: 0.2 }}
             >
               <a href="https://www.builddirect.com/">
                 <Card
@@ -452,7 +452,7 @@ export function Client() {
               }}
               initial="hidden"
               animate={control4}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 1.2, delay: 0.2 }}
             >
               <p
                 style={{ marginTop: "20px", textAlign: "center" }}

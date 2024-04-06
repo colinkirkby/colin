@@ -70,10 +70,8 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
         width: "100%",
         border: "none",
         boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
-        paddingTop: "120px",
-        marginBottom: "30px",
-
-        minHeight: "854px"
+        paddingBottom: "80px",
+        marginBottom: "30px"
       }}
       cover={<img src={imagePath} alt={headerText} style={{ width: "100%" }} />}
     >
@@ -91,7 +89,7 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            marginTop: "100px",
+            marginTop: "60px",
             paddingInline: "40px"
           }}
         >
@@ -103,7 +101,7 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
             initial="hidden"
             animate="visible"
             exit={{ opacity: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 2, delay: 0.4 }}
           >
             <h1>{headerText}</h1>
           </motion.div>
@@ -115,9 +113,11 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
             initial="hidden"
             animate="visible"
             exit={{ opacity: 0 }}
-            transition={{ duration: 1, delay: 2.5 }}
+            transition={{ duration: 2.5, delay: 3 }}
           >
-            <p style={{ marginTop: "150px", marginBottom: "20px" }}>
+            <p
+              style={{ marginTop: "60px", marginBottom: "20px", fontSize: 20 }}
+            >
               {bodyText}
             </p>
           </motion.div>
@@ -129,9 +129,9 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
             initial="hidden"
             animate="visible"
             exit={{ opacity: 0 }}
-            transition={{ duration: 1, delay: 3.5 }}
+            transition={{ duration: 2.5, delay: 5 }}
           >
-            <p style={{ marginTop: "50px", marginBottom: "100px" }}>
+            <p style={{ marginTop: "20px", marginBottom: "100px" }}>
               {footerText}
             </p>
           </motion.div>
