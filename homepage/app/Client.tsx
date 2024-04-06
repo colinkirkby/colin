@@ -217,7 +217,8 @@ export function Client() {
       style={{
         justifyContent: "center",
         alignItems: "center",
-        paddingBottom: "100px"
+        paddingBottom: "100px",
+        overflow: "hidden"
       }}
     >
       {!isMobile ? (
