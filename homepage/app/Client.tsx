@@ -90,7 +90,8 @@ export function Client() {
           } else {
             // Optionally reset the animation state when the element goes out of view
             console.log("1 should be hidden");
-            control1.start("hidden");
+            control1.start("exit");
+            //control1.start("hidden");
           }
         });
       },
@@ -121,13 +122,14 @@ export function Client() {
             control2.start("visible");
           } else {
             // Optionally reset the animation state when the element goes out of view
-            control2.start("hidden");
+            control2.start("exit");
+            //control2.start("hidden");
           }
         });
       },
       {
         // Adjust the threshold and rootMargin to control when the callback is executed
-        threshold: 0.8 // Trigger when 10% of the element is in view
+        threshold: 1 // Trigger when 10% of the element is in view
       }
     );
 
@@ -151,7 +153,8 @@ export function Client() {
             control3.start("visible");
           } else {
             // Optionally reset the animation state when the element goes out of view
-            control3.start("hidden");
+            control3.start("exit");
+            //control3.start("hidden");
           }
         });
       },
@@ -181,13 +184,14 @@ export function Client() {
             control4.start("visible");
           } else {
             // Optionally reset the animation state when the element goes out of view
-            control4.start("hidden");
+            control4.start("exit");
+            //control4.start("hidden");
           }
         });
       },
       {
         // Adjust the threshold and rootMargin to control when the callback is executed
-        threshold: 0.8 // Trigger when 10% of the element is in view
+        threshold: 1 // Trigger when 10% of the element is in view
       }
     );
 
@@ -296,7 +300,8 @@ export function Client() {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginBottom: "250px"
+          height: "100vh",
+          alignItems: "center"
         }}
       >
         <h1
@@ -318,12 +323,14 @@ export function Client() {
           >
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 0, x: 400 },
-                visible: { opacity: 1, y: 0, x: 0 }
+                hidden: { opacity: 0, y: 400, scale: 0.2 },
+                visible: { opacity: 1, y: 0, scale: 1 },
+
+                exit: { opacity: 0, scale: 0.2 }
               }}
               initial="hidden"
               animate={control1}
-              transition={{ duration: 0.7, delay: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
             >
               <a href="https://stream-line.vercel.app/">
                 <Card
@@ -344,11 +351,12 @@ export function Client() {
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: 75, scale: 0.7 },
-                visible: { opacity: 1, y: 0, scale: 1 }
+                visible: { opacity: 1, y: 0, scale: 1 },
+                exit: { opacity: 0, scale: 0.2 }
               }}
               initial="hidden"
               animate={control1}
-              transition={{ duration: 0.7, delay: 0.1 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
             >
               <p style={{ marginTop: "20px" }} className=" text-black">
                 {
@@ -366,12 +374,13 @@ export function Client() {
           >
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 0, x: 400 },
-                visible: { opacity: 1, y: 0, x: 0 }
+                hidden: { opacity: 0, y: 400, scale: 0.2 },
+                visible: { opacity: 1, y: 0, scale: 1 },
+                exit: { opacity: 0, scale: 0.2 }
               }}
               initial="hidden"
               animate={control2}
-              transition={{ duration: 0.7, delay: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
             >
               <a href="https://ufreecalendar.vercel.app/">
                 <Card
@@ -387,12 +396,12 @@ export function Client() {
             </motion.div>
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 75, scale: 0.7 },
+                exit: { opacity: 0, y: 75, scale: 0.7 },
                 visible: { opacity: 1, y: 0, scale: 1 }
               }}
-              initial="hidden"
+              initial="exit"
               animate={control2}
-              transition={{ duration: 0.7, delay: 0.1 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
             >
               <p
                 style={{ marginTop: "20px", textAlign: "center" }}
@@ -410,8 +419,8 @@ export function Client() {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginTop: "250px",
-          marginBottom: "250px"
+          height: "100vh",
+          alignItems: "center"
         }}
       >
         <h1
@@ -433,12 +442,13 @@ export function Client() {
           >
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 0, x: 400 },
-                visible: { opacity: 1, y: 0, x: 0 }
+                hidden: { opacity: 0, y: 400, scale: 0.2 },
+                visible: { opacity: 1, y: 0, scale: 1 },
+                exit: { opacity: 0, scale: 0.2 }
               }}
               initial="hidden"
               animate={control3}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
             >
               <a href="https://portable-electric.com/neuron-os/">
                 <Card
@@ -459,12 +469,12 @@ export function Client() {
             </motion.div>
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 75, scale: 0.7 },
+                exit: { opacity: 0, y: 75, scale: 0.7 },
                 visible: { opacity: 1, y: 0, scale: 1 }
               }}
-              initial="hidden"
+              initial="exit"
               animate={control3}
-              transition={{ duration: 0.7, delay: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
             >
               <p
                 style={{ marginTop: "20px", textAlign: "center" }}
@@ -488,8 +498,9 @@ export function Client() {
           >
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 0, x: 400 },
-                visible: { opacity: 1, y: 0, x: 0 }
+                hidden: { opacity: 0, y: 400, scale: 0.2 },
+                visible: { opacity: 1, y: 0, scale: 1 },
+                exit: { opacity: 0, scale: 0.2 }
               }}
               initial="hidden"
               animate={control4}
@@ -509,12 +520,12 @@ export function Client() {
             </motion.div>
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 75, scale: 0.7 },
+                exit: { opacity: 0, y: 75, scale: 0.7 },
                 visible: { opacity: 1, y: 0, scale: 1 }
               }}
-              initial="hidden"
+              initial="exit"
               animate={control4}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
             >
               <p
                 style={{ marginTop: "20px", textAlign: "center" }}
