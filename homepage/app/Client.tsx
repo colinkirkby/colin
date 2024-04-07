@@ -352,7 +352,7 @@ export function Client() {
             >
               <p style={{ marginTop: "20px" }} className=" text-black">
                 {
-                  "A work in progress saas project designed using AWS cloud services and NextJS. Intended to simplyfy retail workspaces and bring valueto managment teams"
+                  "A work in progress saas project designed using AWS cloud services and NextJS. Intended to simplyfy retail workspaces and bring valueto managment teams."
                 }
               </p>
             </motion.div>
@@ -399,7 +399,7 @@ export function Client() {
                 className=" text-black"
               >
                 {
-                  "A TypeScript based calendar application leveraging browser storage. This was meant as a project to learn TypeScript and build more complicated functional UI"
+                  "A TypeScript based calendar application leveraging browser storage. This was meant as a project to learn TypeScript and build more complicated functional UI."
                 }
               </p>
             </motion.div>
@@ -521,7 +521,7 @@ export function Client() {
                 className="text-black"
               >
                 {
-                  "Worked as a full stack developer maintaining build directs online storefront. My main accomplisment from my work there was assisting in launching a revamped version of their webpage rebuilt to leverage the new NextJS feature set. Bringing page load times down 90% to 1-2 seconds per page. "
+                  "Worked as a full stack developer maintaining build directs online storefront. I assisted in launching a revamped version of their webpage rebuilt to leverage the new NextJS feature set. Bringing page load times down 90% to 1-2 seconds per page. "
                 }
               </p>
               {isMobile && (
