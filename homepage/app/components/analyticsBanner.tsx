@@ -132,8 +132,18 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
             exit={{ opacity: 0 }}
             transition={{ duration: 2.5, delay: 5 }}
           >
-            <p style={{ marginTop: "20px", marginBottom: "100px" }}>
+            <p style={{ marginTop: "20px", textAlign: "center" }}>
               {footerText}
+            </p>
+            <p
+              style={{
+                marginTop: "20px",
+                textAlign: "center",
+                marginBottom: "100px",
+                fontSize: "10px"
+              }}
+            >
+              {"Everything on this page is hand crafted by me"}
             </p>
           </motion.div>
         </div>

@@ -250,7 +250,7 @@ export function Client() {
           imagePath="logoMobile.png"
           headerText="Colin's Portfolio"
           bodyText="Welcome"
-          footerText="This is a collection of some of my work"
+          footerText="This is a collection of some of my work "
         />
       )}
       <div
