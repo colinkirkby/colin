@@ -259,7 +259,7 @@ export function Client() {
           isMobile
             ? {
                 textAlign: "center",
-                marginBottom: "100px",
+                paddingBottom: "200px",
                 marginTop: "100px",
                 scrollSnapAlign: "center",
                 height: "900px",
@@ -268,7 +268,7 @@ export function Client() {
               }
             : {
                 textAlign: "center",
-                marginBottom: "100px",
+                paddingBottom: "100px",
                 marginTop: "100px",
                 scrollSnapAlign: "center"
               }
@@ -287,7 +287,7 @@ export function Client() {
             About Me
           </h1>
           <p
-            style={{ marginTop: "20px", textAlign: "center" }}
+            style={{ marginTop: "20px", textAlign: "center", fontSize: "15px" }}
             className=" text-black"
           >
             {
