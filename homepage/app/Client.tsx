@@ -228,8 +228,6 @@ export function Client() {
               scrollSnapStop: "always"
             }
           : {
-              height: "100vh",
-              overflow: "scroll",
               justifyContent: "center",
               alignItems: "center",
               paddingBottom: "100px"

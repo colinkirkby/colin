@@ -72,7 +72,7 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
         boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
         paddingBottom: "80px",
         marginBottom: "30px",
-        scrollSnapAlign: "center"
+        scrollSnapAlign: "start"
       }}
       cover={<img src={imagePath} alt={headerText} style={{ width: "100%" }} />}
     >
