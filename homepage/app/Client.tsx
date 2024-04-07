@@ -358,7 +358,10 @@ export function Client() {
               animate={control1}
               transition={{ duration: 0.7, delay: 0.4 }}
             >
-              <p style={{ marginTop: "20px" }} className=" text-black">
+              <p
+                style={{ marginTop: "20px", textAlign: "center" }}
+                className=" text-black"
+              >
                 {
                   "A work in progress saas project designed using AWS cloud services and NextJS. Intended to simplyfy retail workspaces and bring valueto managment teams."
                 }
