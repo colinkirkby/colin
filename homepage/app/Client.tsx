@@ -287,7 +287,12 @@ export function Client() {
             About Me
           </h1>
           <p
-            style={{ marginTop: "20px", textAlign: "center", fontSize: "15px" }}
+            style={{
+              marginTop: "20px",
+              padding: "5vw",
+              textAlign: "center",
+              fontSize: "15px"
+            }}
             className=" text-black"
           >
             {
