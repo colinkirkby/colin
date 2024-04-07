@@ -507,7 +507,7 @@ export function Client() {
               }}
               initial="hidden"
               animate={control4}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
             >
               <a href="https://www.builddirect.com/">
                 <Card
