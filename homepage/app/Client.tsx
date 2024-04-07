@@ -311,7 +311,11 @@ export function Client() {
       >
         <h1
           className=" text-black"
-          style={{ fontSize: "30px", scrollSnapAlign: "center" }}
+          style={{
+            fontSize: "30px",
+            scrollSnapAlign: "center",
+            paddingBottom: "300px"
+          }}
         >
           Personal Projects
         </h1>
@@ -438,7 +442,11 @@ export function Client() {
       >
         <h1
           className=" text-black"
-          style={{ fontSize: "30px", scrollSnapAlign: "center" }}
+          style={{
+            fontSize: "30px",
+            scrollSnapAlign: "center",
+            paddingBottom: "300px"
+          }}
         >
           Previous Company Work
         </h1>
