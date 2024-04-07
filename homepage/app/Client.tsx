@@ -97,7 +97,7 @@ export function Client() {
       },
       {
         // Adjust the threshold and rootMargin to control when the callback is executed
-        threshold: 1 // Trigger when 10% of the element is in view
+        threshold: 0.8 // Trigger when 10% of the element is in view
       }
     );
 
@@ -129,7 +129,7 @@ export function Client() {
       },
       {
         // Adjust the threshold and rootMargin to control when the callback is executed
-        threshold: 1 // Trigger when 10% of the element is in view
+        threshold: 0.8 // Trigger when 10% of the element is in view
       }
     );
 
@@ -191,7 +191,7 @@ export function Client() {
       },
       {
         // Adjust the threshold and rootMargin to control when the callback is executed
-        threshold: 1 // Trigger when 10% of the element is in view
+        threshold: 0.8 // Trigger when 10% of the element is in view
       }
     );
 
