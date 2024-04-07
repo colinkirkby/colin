@@ -323,6 +323,7 @@ export function Client() {
             style={{
               position: "relative",
               marginBottom: "200px",
+              paddingBottom: "100px",
               scrollSnapAlign: "center"
             }}
           >
@@ -378,7 +379,11 @@ export function Client() {
         <Col className="m-10">
           <div
             ref={ref2}
-            style={{ position: "relative", scrollSnapAlign: "center" }}
+            style={{
+              position: "relative",
+              paddingBottom: "100px",
+              scrollSnapAlign: "center"
+            }}
           >
             <motion.div
               variants={{
@@ -444,6 +449,7 @@ export function Client() {
             ref={ref3}
             style={{
               position: "relative",
+              paddingBottom: "100px",
               marginBottom: "200px",
               scrollSnapAlign: "center"
             }}
@@ -500,6 +506,7 @@ export function Client() {
             ref={ref4}
             style={{
               position: "relative",
+              paddingBottom: "100px",
               scrollSnapAlign: "center",
               scrollSnapStop: "always"
             }}
