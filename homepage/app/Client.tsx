@@ -219,7 +219,8 @@ export function Client() {
         isMobile
           ? {
               height: "100vh",
-              overflow: "scroll",
+              overflowY: "scroll",
+              overflowX: "hidden",
               justifyContent: "center",
               alignItems: "center",
               paddingBottom: "100px",
