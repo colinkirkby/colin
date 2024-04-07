@@ -323,7 +323,7 @@ export function Client() {
           >
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 400, scale: 0.2 },
+                hidden: { opacity: 0, scale: 0.2 },
                 visible: { opacity: 1, y: 0, scale: 1 },
 
                 exit: { opacity: 0, scale: 0.2 }
@@ -374,7 +374,7 @@ export function Client() {
           >
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 400, scale: 0.2 },
+                hidden: { opacity: 0, scale: 0.2 },
                 visible: { opacity: 1, y: 0, scale: 1 },
                 exit: { opacity: 0, scale: 0.2 }
               }}
@@ -442,7 +442,7 @@ export function Client() {
           >
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 400, scale: 0.2 },
+                hidden: { opacity: 0, scale: 0.2 },
                 visible: { opacity: 1, y: 0, scale: 1 },
                 exit: { opacity: 0, scale: 0.2 }
               }}
@@ -498,7 +498,7 @@ export function Client() {
           >
             <motion.div
               variants={{
-                hidden: { opacity: 0, y: 400, scale: 0.2 },
+                hidden: { opacity: 0, scale: 0.2 },
                 visible: { opacity: 1, y: 0, scale: 1 },
                 exit: { opacity: 0, scale: 0.2 }
               }}
