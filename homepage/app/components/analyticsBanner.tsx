@@ -70,7 +70,7 @@ export const AnalyticsCardVertical: React.FC<AnalyticsCardButtonLeftProps> = ({
         width: "100%",
         border: "none",
         boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
-        paddingBottom: "80px",
+        height: "100vh",
         marginBottom: "30px",
         scrollSnapAlign: "start"
       }}
