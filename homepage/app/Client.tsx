@@ -372,7 +372,7 @@ export function Client() {
                 className=" text-black"
               >
                 {
-                  "Built a React based JavaScript application using AWS serverless ecosystem. This application allowed for easy deployment and rental managment of the companies portable battery units."
+                  "Built a React based JavaScript application using AWS serverless ecosystem. This application allowed for easy deployment and rental managment of the company's portable battery units."
                 }
               </p>
             </motion.div>
@@ -424,16 +424,10 @@ export function Client() {
                 className="text-black"
               >
                 {
-                  "Worked as a full stack developer maintaining build directs online storefront. I assisted in launching a revamped version of their webpage rebuilt to leverage the new NextJS feature set. Bringing page load times down 90% to 1-2 seconds per page. "
+                  "Worked as a full stack developer maintaining BuildDirects online storefront. I helped build and launch a revamped version of the webpage designed to leverage the new NextJS feature set. Bringing page load times down 90% to 1-2 seconds per page. "
                 }
               </p>
-              {isMobile && (
-                <Row justify="center" style={{ marginTop: "50px" }}>
-                  <a href="https://www.linkedin.com/in/colin-kirkby-253909178">
-                    <Button type="primary"> Visit My Linked In</Button>
-                  </a>
-                </Row>
-              )}
+              
             </motion.div>
           </div>
         </Col>
@@ -566,6 +560,13 @@ export function Client() {
                 }
               </p>
             </motion.div>
+            {isMobile && (
+                <Row justify="center" style={{ marginTop: "50px" }}>
+                  <a href="https://www.linkedin.com/in/colin-kirkby-253909178">
+                    <Button type="primary"> Visit My Linked In</Button>
+                  </a>
+                </Row>
+              )}
           </div>
         </Col>
       </Row>
