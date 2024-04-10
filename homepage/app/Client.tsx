@@ -317,138 +317,7 @@ export function Client() {
             paddingBottom: "300px"
           }}
         >
-          Personal Projects
-        </h1>
-      </div>
-      <Row justify="space-around" style={{ padding: "20px" }}>
-        <Col className="m-10">
-          <div
-            ref={ref1}
-            style={{
-              position: "relative",
-              marginBottom: "200px",
-              paddingBottom: "100px",
-              scrollSnapAlign: "center"
-            }}
-          >
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, scale: 0.2 },
-                visible: { opacity: 1, y: 0, scale: 1 },
-
-                exit: { opacity: 0, scale: 0.2 }
-              }}
-              initial="hidden"
-              animate={control1}
-              transition={{ duration: 0.7, delay: 0 }}
-            >
-              <a href="https://stream-line.vercel.app/">
-                <Card
-                  hoverable
-                  style={mobileStyle}
-                  cover={
-                    <img
-                      src="/bannersquare.png"
-                      alt="streamline"
-                      style={imgStyle}
-                    />
-                  }
-                >
-                  <Meta title="StreamLine Application WIP" />
-                </Card>
-              </a>
-            </motion.div>
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 75, scale: 0.7 },
-                visible: { opacity: 1, y: 0, scale: 1 },
-                exit: { opacity: 0, scale: 0.2 }
-              }}
-              initial="hidden"
-              animate={control1}
-              transition={{ duration: 0.7, delay: 0.4 }}
-            >
-              <p
-                style={{ marginTop: "20px", textAlign: "center" }}
-                className=" text-black"
-              >
-                {
-                  "A work in progress saas project designed using AWS cloud services and NextJS. Intended to simplyfy retail workspaces and bring valueto managment teams."
-                }
-              </p>
-            </motion.div>
-          </div>
-        </Col>
-
-        <Col className="m-10">
-          <div
-            ref={ref2}
-            style={{
-              position: "relative",
-              paddingBottom: "100px",
-              scrollSnapAlign: "center"
-            }}
-          >
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, scale: 0.2 },
-                visible: { opacity: 1, y: 0, scale: 1 },
-                exit: { opacity: 0, scale: 0.2 }
-              }}
-              initial="hidden"
-              animate={control2}
-              transition={{ duration: 0.7, delay: 0 }}
-            >
-              <a href="https://ufreecalendar.vercel.app/">
-                <Card
-                  hoverable
-                  style={mobileStyle}
-                  cover={
-                    <img src="/ufree.png" alt="streamline" style={imgStyle} />
-                  }
-                >
-                  <Meta title="Calendar Application" />
-                </Card>
-              </a>
-            </motion.div>
-            <motion.div
-              variants={{
-                exit: { opacity: 0, y: 75, scale: 0.7 },
-                visible: { opacity: 1, y: 0, scale: 1 }
-              }}
-              initial="exit"
-              animate={control2}
-              transition={{ duration: 0.7, delay: 0.4 }}
-            >
-              <p
-                style={{ marginTop: "20px", textAlign: "center" }}
-                className=" text-black"
-              >
-                {
-                  "A TypeScript based calendar application leveraging browser storage. This was meant as a project to learn TypeScript and build more complicated functional UI."
-                }
-              </p>
-            </motion.div>
-          </div>
-        </Col>
-      </Row>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          height: "100vh",
-          alignItems: "center"
-        }}
-      >
-        <h1
-          className=" text-black"
-          style={{
-            fontSize: "30px",
-            scrollSnapAlign: "center",
-            paddingBottom: "300px"
-          }}
-        >
-          Previous Company Work
+          Work Experience 
         </h1>
       </div>
       <Row justify="space-around">
@@ -569,6 +438,138 @@ export function Client() {
           </div>
         </Col>
       </Row>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          height: "100vh",
+          alignItems: "center"
+        }}
+      >
+        <h1
+          className=" text-black"
+          style={{
+            fontSize: "30px",
+            scrollSnapAlign: "center",
+            paddingBottom: "300px"
+          }}
+        >
+          Personal Projects
+        </h1>
+      </div>
+      <Row justify="space-around" style={{ padding: "20px" }}>
+        <Col className="m-10">
+          <div
+            ref={ref1}
+            style={{
+              position: "relative",
+              marginBottom: "200px",
+              paddingBottom: "100px",
+              scrollSnapAlign: "center"
+            }}
+          >
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, scale: 0.2 },
+                visible: { opacity: 1, y: 0, scale: 1 },
+
+                exit: { opacity: 0, scale: 0.2 }
+              }}
+              initial="hidden"
+              animate={control1}
+              transition={{ duration: 0.7, delay: 0 }}
+            >
+              <a href="https://stream-line.vercel.app/">
+                <Card
+                  hoverable
+                  style={mobileStyle}
+                  cover={
+                    <img
+                      src="/bannersquare.png"
+                      alt="streamline"
+                      style={imgStyle}
+                    />
+                  }
+                >
+                  <Meta title="StreamLine Application WIP" />
+                </Card>
+              </a>
+            </motion.div>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 75, scale: 0.7 },
+                visible: { opacity: 1, y: 0, scale: 1 },
+                exit: { opacity: 0, scale: 0.2 }
+              }}
+              initial="hidden"
+              animate={control1}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
+              <p
+                style={{ marginTop: "20px", textAlign: "center" }}
+                className=" text-black"
+              >
+                {
+                  "A work in progress saas project designed using AWS cloud services and NextJS. Intended to simplyfy retail workspaces and bring valueto managment teams."
+                }
+              </p>
+            </motion.div>
+          </div>
+        </Col>
+
+        <Col className="m-10">
+          <div
+            ref={ref2}
+            style={{
+              position: "relative",
+              paddingBottom: "100px",
+              scrollSnapAlign: "center"
+            }}
+          >
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, scale: 0.2 },
+                visible: { opacity: 1, y: 0, scale: 1 },
+                exit: { opacity: 0, scale: 0.2 }
+              }}
+              initial="hidden"
+              animate={control2}
+              transition={{ duration: 0.7, delay: 0 }}
+            >
+              <a href="https://ufreecalendar.vercel.app/">
+                <Card
+                  hoverable
+                  style={mobileStyle}
+                  cover={
+                    <img src="/ufree.png" alt="streamline" style={imgStyle} />
+                  }
+                >
+                  <Meta title="Calendar Application" />
+                </Card>
+              </a>
+            </motion.div>
+            <motion.div
+              variants={{
+                exit: { opacity: 0, y: 75, scale: 0.7 },
+                visible: { opacity: 1, y: 0, scale: 1 }
+              }}
+              initial="exit"
+              animate={control2}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
+              <p
+                style={{ marginTop: "20px", textAlign: "center" }}
+                className=" text-black"
+              >
+                {
+                  "A TypeScript based calendar application leveraging browser storage. This was meant as a project to learn TypeScript and build more complicated functional UI."
+                }
+              </p>
+            </motion.div>
+          </div>
+        </Col>
+      </Row>
+      
       {!isMobile && (
         <Row justify="center" style={{ marginTop: "30px" }}>
           <a href="https://www.linkedin.com/in/colin-kirkby-253909178">
