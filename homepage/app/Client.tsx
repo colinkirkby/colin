@@ -504,7 +504,7 @@ export function Client() {
                 className=" text-black"
               >
                 {
-                  "A work in progress saas project designed using AWS cloud services and NextJS. Intended to simplyfy retail workspaces and bring valueto managment teams."
+                  "A work in progress SAAS project designed using AWS cloud services and NextJS. Intended to simplyfy retail workspaces and bring value to managment teams."
                 }
               </p>
             </motion.div>
@@ -556,7 +556,7 @@ export function Client() {
                 className=" text-black"
               >
                 {
-                  "A TypeScript based calendar application leveraging browser storage. This was meant as a project to learn TypeScript and build more complicated functional UI."
+                  "A TypeScript based calendar application leveraging browser storage. This was a project to learn TypeScript and build more complicated functional UI."
                 }
               </p>
             </motion.div>
