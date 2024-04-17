@@ -1,14 +1,14 @@
-import { Button, Card, Col, Row } from "antd";
-import { motion, useInView, useAnimation } from "framer-motion";
-import Image from "next/image";
+import { Button, Card, Col, Row } from "antd"
+import { motion, useInView, useAnimation } from "framer-motion"
+import Image from "next/image"
 import {
   AnalyticsCardButtonLeft,
   AnalyticsCardVertical
-} from "./components/analyticsBanner";
-import { useEffect, useRef, useState } from "react";
-import useDeviceDetection from "./hooks/UseDetection";
-import AnimatedCard from "./components/animatedCard";
-import Link from "next/link";
+} from "./components/analyticsBanner"
+import { useEffect, useRef, useState } from "react"
+import useDeviceDetection from "./hooks/UseDetection"
+import AnimatedCard from "./components/animatedCard"
+import Link from "next/link"
 
 const mobileStyle = {
   width: "300px",
@@ -16,34 +16,34 @@ const mobileStyle = {
   border: "none",
   margin: "auto",
   boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)"
-};
+}
 const imgStyle = {
   overflow: "hidden",
   paddingLeft: "1px",
   paddingRight: "1px"
-};
+}
 
 export function Client() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [hasMounted, setHasMounted] = useState(false);
-  const ref = useRef(null);
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
-  const ref4 = useRef(null);
+  const [isMobile, setIsMobile] = useState(false)
+  const [hasMounted, setHasMounted] = useState(false)
+  const ref = useRef(null)
+  const ref1 = useRef(null)
+  const ref2 = useRef(null)
+  const ref3 = useRef(null)
+  const ref4 = useRef(null)
 
-  const control = useAnimation();
-  const control1 = useAnimation();
-  const control2 = useAnimation();
-  const control3 = useAnimation();
-  const control4 = useAnimation();
+  const control = useAnimation()
+  const control1 = useAnimation()
+  const control2 = useAnimation()
+  const control3 = useAnimation()
+  const control4 = useAnimation()
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth < 720); // Set to true if width is less than 720
-  };
+    setIsMobile(window.innerWidth < 720) // Set to true if width is less than 720
+  }
   useEffect(() => {
-    setHasMounted(true);
-  }, []);
+    setHasMounted(true)
+  }, [])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -52,31 +52,31 @@ export function Client() {
           // Check if the element is in the viewport
           if (entry.isIntersecting) {
             // Trigger the animation
-            control.start("visible");
-            console.log("0 should be visible");
+            control.start("visible")
+            console.log("0 should be visible")
           } else {
             // Optionally reset the animation state when the element goes out of view
-            console.log("0 should be hidden");
-            control.start("hidden");
+            console.log("0 should be hidden")
+            control.start("hidden")
           }
-        });
+        })
       },
       {
         // Adjust the threshold and rootMargin to control when the callback is executed
         threshold: 0.5 // Trigger when 10% of the element is in view
       }
-    );
+    )
 
     if (ref.current) {
-      observer.observe(ref.current);
+      observer.observe(ref.current)
     }
 
     return () => {
       if (ref.current) {
-        observer.unobserve(ref.current);
+        observer.unobserve(ref.current)
       }
-    };
-  }, [control]);
+    }
+  }, [control])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -85,32 +85,32 @@ export function Client() {
           // Check if the element is in the viewport
           if (entry.isIntersecting) {
             // Trigger the animation
-            control1.start("visible");
-            console.log("1 should be visible");
+            control1.start("visible")
+            console.log("1 should be visible")
           } else {
             // Optionally reset the animation state when the element goes out of view
-            console.log("1 should be hidden");
-            control1.start("exit");
+            console.log("1 should be hidden")
+            control1.start("exit")
             //control1.start("hidden");
           }
-        });
+        })
       },
       {
         // Adjust the threshold and rootMargin to control when the callback is executed
         threshold: 0.8 // Trigger when 10% of the element is in view
       }
-    );
+    )
 
     if (ref1.current) {
-      observer.observe(ref1.current);
+      observer.observe(ref1.current)
     }
 
     return () => {
       if (ref1.current) {
-        observer.unobserve(ref1.current);
+        observer.unobserve(ref1.current)
       }
-    };
-  }, [control1]);
+    }
+  }, [control1])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -119,30 +119,30 @@ export function Client() {
           // Check if the element is in the viewport
           if (entry.isIntersecting) {
             // Trigger the animation
-            control2.start("visible");
+            control2.start("visible")
           } else {
             // Optionally reset the animation state when the element goes out of view
-            control2.start("exit");
+            control2.start("exit")
             //control2.start("hidden");
           }
-        });
+        })
       },
       {
         // Adjust the threshold and rootMargin to control when the callback is executed
         threshold: 0.8 // Trigger when 10% of the element is in view
       }
-    );
+    )
 
     if (ref2.current) {
-      observer.observe(ref2.current);
+      observer.observe(ref2.current)
     }
 
     return () => {
       if (ref2.current) {
-        observer.unobserve(ref2.current);
+        observer.unobserve(ref2.current)
       }
-    };
-  }, [control2]);
+    }
+  }, [control2])
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -150,30 +150,30 @@ export function Client() {
           // Check if the element is in the viewport
           if (entry.isIntersecting) {
             // Trigger the animation
-            control3.start("visible");
+            control3.start("visible")
           } else {
             // Optionally reset the animation state when the element goes out of view
-            control3.start("exit");
+            control3.start("exit")
             //control3.start("hidden");
           }
-        });
+        })
       },
       {
         // Adjust the threshold and rootMargin to control when the callback is executed
         threshold: 0.8 // Trigger when 10% of the element is in view
       }
-    );
+    )
 
     if (ref3.current) {
-      observer.observe(ref3.current);
+      observer.observe(ref3.current)
     }
 
     return () => {
       if (ref3.current) {
-        observer.unobserve(ref3.current);
+        observer.unobserve(ref3.current)
       }
-    };
-  }, [control3]);
+    }
+  }, [control3])
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -181,41 +181,41 @@ export function Client() {
           // Check if the element is in the viewport
           if (entry.isIntersecting) {
             // Trigger the animation
-            control4.start("visible");
+            control4.start("visible")
           } else {
             // Optionally reset the animation state when the element goes out of view
-            control4.start("exit");
+            control4.start("exit")
             //control4.start("hidden");
           }
-        });
+        })
       },
       {
         // Adjust the threshold and rootMargin to control when the callback is executed
         threshold: 0.8 // Trigger when 10% of the element is in view
       }
-    );
+    )
 
     if (ref4.current) {
-      observer.observe(ref4.current);
+      observer.observe(ref4.current)
     }
 
     return () => {
       if (ref4.current) {
-        observer.unobserve(ref4.current);
+        observer.unobserve(ref4.current)
       }
-    };
-  }, [control4]);
+    }
+  }, [control4])
 
-  const device = useDeviceDetection();
+  const device = useDeviceDetection()
   useEffect(() => {
     if (device == "Mobile") {
-      setIsMobile(true);
+      setIsMobile(true)
     } else {
-      setIsMobile(false);
+      setIsMobile(false)
     }
-  }, [device]);
+  }, [device])
 
-  const { Meta } = Card;
+  const { Meta } = Card
 
   return (
     <div
@@ -242,8 +242,8 @@ export function Client() {
         <AnalyticsCardButtonLeft
           imagePath="logo.png"
           headerText="Colin's Portfolio"
-          bodyText="This is a collection of some of my work"
-          footerText=""
+          bodyText="Welcome"
+          footerText="This is a collection of some of my work "
         />
       ) : (
         <AnalyticsCardVertical
@@ -302,34 +302,60 @@ export function Client() {
         </motion.div>
       </div>
       <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          height: "100vh",
-          alignItems: "center"
-        }}
+        style={
+          isMobile
+            ? {
+                display: "flex",
+                justifyContent: "center",
+                height: "100vh",
+                alignItems: "center"
+              }
+            : {
+                display: "flex",
+                justifyContent: "center",
+                height: "10vh",
+                alignItems: "center"
+              }
+        }
       >
         <h1
           className=" text-black"
-          style={{
-            fontSize: "30px",
-            scrollSnapAlign: "center",
-            paddingBottom: "300px"
-          }}
+          style={
+            isMobile
+              ? {
+                  fontSize: "30px",
+                  scrollSnapAlign: "center",
+                  paddingBottom: "300px"
+                }
+              : {
+                  fontSize: "30px",
+                  scrollSnapAlign: "center",
+                  paddingBottom: "30px"
+                }
+          }
         >
-          Work Experience 
+          Work Experience
         </h1>
       </div>
       <Row justify="space-around">
         <Col className="m-10">
           <div
             ref={ref3}
-            style={{
-              position: "relative",
-              paddingBottom: "100px",
-              marginBottom: "200px",
-              scrollSnapAlign: "center"
-            }}
+            style={
+              isMobile
+                ? {
+                    position: "relative",
+                    paddingBottom: "100px",
+                    marginBottom: "200px",
+                    scrollSnapAlign: "center"
+                  }
+                : {
+                    position: "relative",
+                    paddingBottom: "10px",
+                    marginBottom: "20px",
+                    scrollSnapAlign: "center"
+                  }
+            }
           >
             <motion.div
               variants={{
@@ -381,12 +407,21 @@ export function Client() {
         <Col className="m-10">
           <div
             ref={ref4}
-            style={{
-              position: "relative",
-              paddingBottom: "100px",
-              scrollSnapAlign: "center",
-              scrollSnapStop: "always"
-            }}
+            style={
+              isMobile
+                ? {
+                    position: "relative",
+                    paddingBottom: "100px",
+                    scrollSnapAlign: "center",
+                    scrollSnapStop: "always"
+                  }
+                : {
+                    position: "relative",
+                    paddingBottom: "10px",
+                    scrollSnapAlign: "center",
+                    scrollSnapStop: "always"
+                  }
+            }
           >
             <motion.div
               variants={{
@@ -427,26 +462,42 @@ export function Client() {
                   "Worked as a full stack developer maintaining BuildDirects online storefront. I helped build and launch a revamped version of the webpage designed to leverage the new NextJS feature set. Bringing page load times down 90% to 1-2 seconds per page. "
                 }
               </p>
-              
             </motion.div>
           </div>
         </Col>
       </Row>
       <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          height: "100vh",
-          alignItems: "center"
-        }}
+        style={
+          isMobile
+            ? {
+                display: "flex",
+                justifyContent: "center",
+                height: "100vh",
+                alignItems: "center"
+              }
+            : {
+                display: "flex",
+                justifyContent: "center",
+                height: "30vh",
+                alignItems: "center"
+              }
+        }
       >
         <h1
           className=" text-black"
-          style={{
-            fontSize: "30px",
-            scrollSnapAlign: "center",
-            paddingBottom: "300px"
-          }}
+          style={
+            isMobile
+              ? {
+                  fontSize: "30px",
+                  scrollSnapAlign: "center",
+                  paddingBottom: "300px"
+                }
+              : {
+                  fontSize: "30px",
+                  scrollSnapAlign: "center",
+                  paddingBottom: "30px"
+                }
+          }
         >
           Personal Projects
         </h1>
@@ -455,12 +506,21 @@ export function Client() {
         <Col className="m-10">
           <div
             ref={ref1}
-            style={{
-              position: "relative",
-              marginBottom: "200px",
-              paddingBottom: "100px",
-              scrollSnapAlign: "center"
-            }}
+            style={
+              isMobile
+                ? {
+                    position: "relative",
+                    marginBottom: "200px",
+                    paddingBottom: "100px",
+                    scrollSnapAlign: "center"
+                  }
+                : {
+                    position: "relative",
+                    marginBottom: "20px",
+                    paddingBottom: "10px",
+                    scrollSnapAlign: "center"
+                  }
+            }
           >
             <motion.div
               variants={{
@@ -561,16 +621,16 @@ export function Client() {
               </p>
             </motion.div>
             {isMobile && (
-                <Row justify="center" style={{ marginTop: "50px" }}>
-                  <a href="https://www.linkedin.com/in/colin-kirkby-253909178">
-                    <Button type="primary"> Visit My Linked In</Button>
-                  </a>
-                </Row>
-              )}
+              <Row justify="center" style={{ marginTop: "50px" }}>
+                <a href="https://www.linkedin.com/in/colin-kirkby-253909178">
+                  <Button type="primary"> Visit My Linked In</Button>
+                </a>
+              </Row>
+            )}
           </div>
         </Col>
       </Row>
-      
+
       {!isMobile && (
         <Row justify="center" style={{ marginTop: "30px" }}>
           <a href="https://www.linkedin.com/in/colin-kirkby-253909178">
@@ -579,5 +639,5 @@ export function Client() {
         </Row>
       )}
     </div>
-  );
+  )
 }
