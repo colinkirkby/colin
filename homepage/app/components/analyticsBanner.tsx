@@ -100,7 +100,7 @@ export const AnalyticsCardButtonLeft: React.FC<
             </p>
           </motion.div>
         </div>
-        <img src={imagePath} alt={headerText} style={{ width: "60%" }} />
+        <img src={imagePath} alt={headerText} style={{ width: "72%" }} />
       </div>
     </Card>
   )

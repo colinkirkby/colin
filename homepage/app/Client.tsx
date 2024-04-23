@@ -18,8 +18,8 @@ const mobileStyle = {
   boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)"
 }
 const desktopStyle = {
-  width: "12vw",
-  height: "12vw",
+  width: "10vw",
+  height: "10vw",
   border: "none",
   margin: "auto",
   boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)"
@@ -389,8 +389,7 @@ export function Client() {
         }
       >
         <Col
-          className="m-5"
-          style={isMobile ? {} : { maxWidth: "16vw", paddingBottom: "10vh" }}
+          style={isMobile ? {} : { maxWidth: "13vw", paddingBottom: "10vh" }}
         >
           <div
             ref={ref5}
@@ -455,7 +454,7 @@ export function Client() {
             </motion.div>
           </div>
         </Col>
-        <Col className="m-5" style={isMobile ? {} : { maxWidth: "16vw" }}>
+        <Col style={isMobile ? {} : { maxWidth: "13vw" }}>
           <div
             ref={ref3}
             style={
@@ -522,7 +521,7 @@ export function Client() {
             </motion.div>
           </div>
         </Col>
-        <Col className="m-5" style={isMobile ? {} : { maxWidth: "16vw" }}>
+        <Col style={isMobile ? {} : { maxWidth: "13vw" }}>
           <div
             ref={ref4}
             style={
@@ -633,12 +632,13 @@ export function Client() {
             ? {}
             : {
                 backgroundColor: "#FFFF",
+                paddingInline: "2vw",
                 borderBottomLeftRadius: "20px",
                 borderBottomRightRadius: "20px"
               }
         }
       >
-        <Col className="m-5" style={isMobile ? {} : { maxWidth: "16vw" }}>
+        <Col style={isMobile ? {} : { maxWidth: "13vw" }}>
           <div
             ref={ref1}
             style={
@@ -707,7 +707,7 @@ export function Client() {
           </div>
         </Col>
 
-        <Col className="m-5" style={isMobile ? {} : { maxWidth: "16vw" }}>
+        <Col style={isMobile ? {} : { maxWidth: "13vw" }}>
           <div
             ref={ref2}
             style={{
