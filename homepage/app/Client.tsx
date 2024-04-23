@@ -48,7 +48,7 @@ export function Client() {
   const control5 = useAnimation()
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth < 720) // Set to true if width is less than 720
+    setIsMobile(window.innerWidth < 720)
   }
   useEffect(() => {
     setHasMounted(true)
@@ -58,19 +58,15 @@ export function Client() {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          // Check if the element is in the viewport
           if (entry.isIntersecting) {
-            // Trigger the animation
             control.start("visible")
           } else {
-            // Optionally reset the animation state when the element goes out of view
             control.start("hidden")
           }
         })
       },
       {
-        // Adjust the threshold and rootMargin to control when the callback is executed
-        threshold: 0.5 // Trigger when 10% of the element is in view
+        threshold: 0.5
       }
     )
 
@@ -89,20 +85,15 @@ export function Client() {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          // Check if the element is in the viewport
           if (entry.isIntersecting) {
-            // Trigger the animation
             control1.start("visible")
           } else {
-            // Optionally reset the animation state when the element goes out of view
             control1.start("exit")
-            //control1.start("hidden");
           }
         })
       },
       {
-        // Adjust the threshold and rootMargin to control when the callback is executed
-        threshold: 0.8 // Trigger when 10% of the element is in view
+        threshold: isMobile ? 0.8 : 0.5
       }
     )
 
@@ -134,7 +125,7 @@ export function Client() {
       },
       {
         // Adjust the threshold and rootMargin to control when the callback is executed
-        threshold: 0.8 // Trigger when 10% of the element is in view
+        threshold: isMobile ? 0.8 : 0.5 // Trigger when 10% of the element is in view
       }
     )
 
@@ -164,8 +155,7 @@ export function Client() {
         })
       },
       {
-        // Adjust the threshold and rootMargin to control when the callback is executed
-        threshold: 0.8 // Trigger when 10% of the element is in view
+        threshold: isMobile ? 0.8 : 0.5
       }
     )
 
@@ -183,20 +173,15 @@ export function Client() {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          // Check if the element is in the viewport
           if (entry.isIntersecting) {
-            // Trigger the animation
             control4.start("visible")
           } else {
-            // Optionally reset the animation state when the element goes out of view
             control4.start("exit")
-            //control4.start("hidden");
           }
         })
       },
       {
-        // Adjust the threshold and rootMargin to control when the callback is executed
-        threshold: 0.8 // Trigger when 10% of the element is in view
+        threshold: isMobile ? 0.8 : 0.5
       }
     )
 
@@ -222,7 +207,7 @@ export function Client() {
         })
       },
       {
-        threshold: 0.8
+        threshold: isMobile ? 0.8 : 0.5
       }
     )
 
@@ -301,10 +286,11 @@ export function Client() {
             : {
                 textAlign: "center",
                 maxWidth: "70vw",
-                paddingBottom: "100px",
+                paddingBottom: "50px",
                 marginTop: "100px",
                 scrollSnapAlign: "center",
-                alignItems: "center"
+                alignItems: "center",
+                marginInline: "auto"
               }
         }
       >
