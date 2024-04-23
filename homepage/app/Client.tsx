@@ -11,8 +11,15 @@ import AnimatedCard from "./components/animatedCard"
 import Link from "next/link"
 
 const mobileStyle = {
-  width: "300px",
-  height: "300px",
+  width: "80vw",
+  height: "80vw",
+  border: "none",
+  margin: "auto",
+  boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)"
+}
+const desktopStyle = {
+  width: "15vw",
+  height: "15vw",
   border: "none",
   margin: "auto",
   boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)"
@@ -31,12 +38,14 @@ export function Client() {
   const ref2 = useRef(null)
   const ref3 = useRef(null)
   const ref4 = useRef(null)
+  const ref5 = useRef(null)
 
   const control = useAnimation()
   const control1 = useAnimation()
   const control2 = useAnimation()
   const control3 = useAnimation()
   const control4 = useAnimation()
+  const control5 = useAnimation()
 
   const handleResize = () => {
     setIsMobile(window.innerWidth < 720) // Set to true if width is less than 720
@@ -53,10 +62,8 @@ export function Client() {
           if (entry.isIntersecting) {
             // Trigger the animation
             control.start("visible")
-            console.log("0 should be visible")
           } else {
             // Optionally reset the animation state when the element goes out of view
-            console.log("0 should be hidden")
             control.start("hidden")
           }
         })
@@ -86,10 +93,8 @@ export function Client() {
           if (entry.isIntersecting) {
             // Trigger the animation
             control1.start("visible")
-            console.log("1 should be visible")
           } else {
             // Optionally reset the animation state when the element goes out of view
-            console.log("1 should be hidden")
             control1.start("exit")
             //control1.start("hidden");
           }
@@ -205,6 +210,32 @@ export function Client() {
       }
     }
   }, [control4])
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            control5.start("visible")
+          } else {
+            control5.start("exit")
+          }
+        })
+      },
+      {
+        threshold: 0.8
+      }
+    )
+
+    if (ref5.current) {
+      observer.observe(ref5.current)
+    }
+
+    return () => {
+      if (ref5.current) {
+        observer.unobserve(ref5.current)
+      }
+    }
+  }, [control5])
 
   const device = useDeviceDetection()
   useEffect(() => {
@@ -228,10 +259,11 @@ export function Client() {
               justifyContent: "center",
               alignItems: "center",
               paddingBottom: "100px",
-              scrollSnapType: "y mandatory", // Set up vertical scroll snapping
+              scrollSnapType: "y mandatory",
               scrollSnapStop: "always"
             }
           : {
+              marginTop: "3vh",
               justifyContent: "center",
               alignItems: "center",
               paddingBottom: "100px"
@@ -268,9 +300,11 @@ export function Client() {
               }
             : {
                 textAlign: "center",
+                maxWidth: "70vw",
                 paddingBottom: "100px",
                 marginTop: "100px",
-                scrollSnapAlign: "center"
+                scrollSnapAlign: "center",
+                alignItems: "center"
               }
         }
       >
@@ -311,6 +345,11 @@ export function Client() {
                 alignItems: "center"
               }
             : {
+                backgroundColor: "#FFFF",
+                borderTopRightRadius: "20px",
+                borderTopLeftRadius: "20px",
+                marginTop: "10vh",
+                paddingTop: "5vh",
                 display: "flex",
                 justifyContent: "center",
                 height: "10vh",
@@ -337,8 +376,83 @@ export function Client() {
           Work Experience
         </h1>
       </div>
-      <Row justify="space-around">
-        <Col className="m-10">
+      <Row
+        justify="space-around"
+        style={
+          isMobile
+            ? {}
+            : {
+                backgroundColor: "#FFFF",
+                borderBottomLeftRadius: "20px",
+                borderBottomRightRadius: "20px"
+              }
+        }
+      >
+        <Col className="m-8" style={isMobile ? {} : { maxWidth: "16vw" }}>
+          <div
+            ref={ref5}
+            style={
+              isMobile
+                ? {
+                    position: "relative",
+                    paddingBottom: "100px",
+                    marginBottom: "200px",
+                    scrollSnapAlign: "center"
+                  }
+                : {
+                    maxWidth: "25vw",
+                    position: "relative",
+                    paddingBottom: "10px",
+                    marginBottom: "20px",
+                    scrollSnapAlign: "center"
+                  }
+            }
+          >
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, scale: 0.2 },
+                visible: { opacity: 1, y: 0, scale: 1 },
+                exit: { opacity: 0, scale: 0.2 }
+              }}
+              initial="hidden"
+              animate={control5}
+              transition={{ duration: 0.7, delay: 0 }}
+            >
+              <a href="https://www.loom.com/share/e06549ba2f5347eb95672ad52a765a5c">
+                <Card
+                  hoverable
+                  size={isMobile ? "default" : "small"}
+                  style={isMobile ? mobileStyle : desktopStyle}
+                  cover={
+                    <img src="/ct_text_cropped.png" alt="" style={imgStyle} />
+                  }
+                >
+                  {" "}
+                  <Meta title="CarTracked" />
+                </Card>
+              </a>
+            </motion.div>
+            <motion.div
+              variants={{
+                exit: { opacity: 0, y: 75, scale: 0.7 },
+                visible: { opacity: 1, y: 0, scale: 1 }
+              }}
+              initial="exit"
+              animate={control5}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
+              <p
+                style={{ marginTop: "20px", textAlign: "center" }}
+                className=" text-black"
+              >
+                {
+                  "Designed and built a mobile version of the cartracked application allowing dealers to have easy access while on the go. "
+                }
+              </p>
+            </motion.div>
+          </div>
+        </Col>
+        <Col className="m-8" style={isMobile ? {} : { maxWidth: "16vw" }}>
           <div
             ref={ref3}
             style={
@@ -370,7 +484,8 @@ export function Client() {
               <a href="https://portable-electric.com/neuron-os/">
                 <Card
                   hoverable
-                  style={mobileStyle}
+                  size={isMobile ? "default" : "small"}
+                  style={isMobile ? mobileStyle : desktopStyle}
                   cover={
                     <img
                       src="/portable1.png"
@@ -404,7 +519,7 @@ export function Client() {
             </motion.div>
           </div>
         </Col>
-        <Col className="m-10">
+        <Col className="m-8" style={isMobile ? {} : { maxWidth: "16vw" }}>
           <div
             ref={ref4}
             style={
@@ -436,7 +551,8 @@ export function Client() {
               <a href="https://www.builddirect.com/">
                 <Card
                   hoverable
-                  style={mobileStyle}
+                  size={isMobile ? "default" : "small"}
+                  style={isMobile ? mobileStyle : desktopStyle}
                   cover={
                     <img src="/build.png" alt="streamline" style={imgStyle} />
                   }
@@ -476,9 +592,14 @@ export function Client() {
                 alignItems: "center"
               }
             : {
+                backgroundColor: "#FFFF",
+                borderTopRightRadius: "20px",
+                borderTopLeftRadius: "20px",
+                marginTop: "10vh",
+                paddingTop: "5vh",
                 display: "flex",
                 justifyContent: "center",
-                height: "30vh",
+                height: "10vh",
                 alignItems: "center"
               }
         }
@@ -502,8 +623,19 @@ export function Client() {
           Personal Projects
         </h1>
       </div>
-      <Row justify="space-around" style={{ padding: "20px" }}>
-        <Col className="m-10">
+      <Row
+        justify="space-around"
+        style={
+          isMobile
+            ? {}
+            : {
+                backgroundColor: "#FFFF",
+                borderBottomLeftRadius: "20px",
+                borderBottomRightRadius: "20px"
+              }
+        }
+      >
+        <Col className="m-8" style={isMobile ? {} : { maxWidth: "16vw" }}>
           <div
             ref={ref1}
             style={
@@ -536,7 +668,8 @@ export function Client() {
               <a href="https://stream-line.vercel.app/">
                 <Card
                   hoverable
-                  style={mobileStyle}
+                  size={isMobile ? "default" : "small"}
+                  style={isMobile ? mobileStyle : desktopStyle}
                   cover={
                     <img
                       src="/bannersquare.png"
@@ -571,7 +704,7 @@ export function Client() {
           </div>
         </Col>
 
-        <Col className="m-10">
+        <Col className="m-8" style={isMobile ? {} : { maxWidth: "16vw" }}>
           <div
             ref={ref2}
             style={{
@@ -593,12 +726,16 @@ export function Client() {
               <a href="https://ufreecalendar.vercel.app/">
                 <Card
                   hoverable
-                  style={mobileStyle}
+                  size={isMobile ? "default" : "small"}
+                  style={isMobile ? mobileStyle : desktopStyle}
                   cover={
                     <img src="/ufree.png" alt="streamline" style={imgStyle} />
                   }
                 >
-                  <Meta title="Calendar Application" />
+                  <Meta
+                    style={isMobile ? {} : { fontSize: "5vw" }}
+                    title="Calendar Application"
+                  />
                 </Card>
               </a>
             </motion.div>
