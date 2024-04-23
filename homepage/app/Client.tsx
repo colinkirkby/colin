@@ -375,7 +375,11 @@ export function Client() {
         }
       >
         <Col
-          style={isMobile ? {} : { maxWidth: "13vw", paddingBottom: "10vh" }}
+          style={
+            isMobile
+              ? { marginInline: "3vw" }
+              : { maxWidth: "13vw", paddingBottom: "10vh" }
+          }
         >
           <div
             ref={ref5}
@@ -440,7 +444,7 @@ export function Client() {
             </motion.div>
           </div>
         </Col>
-        <Col style={isMobile ? {} : { maxWidth: "13vw" }}>
+        <Col style={isMobile ? { marginInline: "3vw" } : { maxWidth: "13vw" }}>
           <div
             ref={ref3}
             style={
@@ -507,7 +511,7 @@ export function Client() {
             </motion.div>
           </div>
         </Col>
-        <Col style={isMobile ? {} : { maxWidth: "13vw" }}>
+        <Col style={isMobile ? { marginInline: "3vw" } : { maxWidth: "13vw" }}>
           <div
             ref={ref4}
             style={
@@ -624,7 +628,7 @@ export function Client() {
               }
         }
       >
-        <Col style={isMobile ? {} : { maxWidth: "13vw" }}>
+        <Col style={isMobile ? { marginInline: "3vw" } : { maxWidth: "13vw" }}>
           <div
             ref={ref1}
             style={
@@ -693,7 +697,7 @@ export function Client() {
           </div>
         </Col>
 
-        <Col style={isMobile ? {} : { maxWidth: "13vw" }}>
+        <Col style={isMobile ? { marginInline: "3vw" } : { maxWidth: "13vw" }}>
           <div
             ref={ref2}
             style={{
