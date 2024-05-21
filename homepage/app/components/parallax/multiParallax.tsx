@@ -4,7 +4,7 @@ import { Button } from 'antd';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { AnalyticsCardButtonLeft, AnalyticsCardLandingVertica, AnalyticsCardVertical } from '../analyticsBanner';
-import styles from "./animation.module.css"
+import styles from "../animation.module.css"
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
@@ -74,7 +74,9 @@ export default function MultilayerParallax() {
 
 
     return (
-        <div className="relative grid place-content-center py-10" style={isMobile ? { overflow: 'hidden', width: "100%", height: "100svh", alignContent: "space-between" } : { width: "100%", height: "100%", alignContent: "space-between" }}>
+        <div className="relative grid place-content-center py-10" style={isMobile ?
+            { overflow: 'hidden', width: "100%", height: "100svh", alignContent: "space-between" } :
+            { width: "100%", height: "100%", alignContent: "space-between" }}>
             {isMobile ? <></> : <div className='flex justify-center items-center content-center z-[80]  my-20'>
                 {!showUp ? <div className="h-10" ></div> :
                     <button className={`${upAnimation} font-bold text-white z-[80]`} onClick={() => {
@@ -85,7 +87,13 @@ export default function MultilayerParallax() {
                     }}>^ </button>}
             </div>
             }
-            {isMobile && showUp && <div className='flex justify-center items-center content-center z-[80]  '>  <button className={`${upAnimation} font-bold text-white z-[80]`} onClick={() => { setActiveIndex(activeIndex - 1); handleUpClick(); }}>^ </button></div>
+            {isMobile && showUp && <div className='flex justify-center items-center content-center z-[80]  '>
+                <button className={`${upAnimation} font-bold text-white z-[80]`} onClick={() => {
+                    setActiveIndex(activeIndex - 1); handleUpClick();
+                }}>
+                    ^
+                </button>
+            </div>
             }
             <motion.div
                 className='z-30'
@@ -105,6 +113,7 @@ export default function MultilayerParallax() {
                     <button className={`${downAnimation} h-10 font-bold text-white z-[80] pb-12 `} onClick={() => {
                         setActiveIndex(activeIndex + 1);
                         handleDownClick();
+
 
 
                     }}>ENTER</button>}</div>

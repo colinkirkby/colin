@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+@keyframes growWidth {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.bar {
+  animation: growWidth 0.5s ease-out forwards;
+}
+
+@keyframes growDown {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+.dropDown {
+  animation: growDown 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+.dropDownFade {
+  opacity: 0;
+  animation: fadeIn 0.2s ease-in 0.2s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.dropDownFadeOut {
+  animation: fadeOut 0.1s ease-in forwards;
+}
+
+@keyframes growUp {
+  from {
+    height: 100%;
+  }
+
+  to {
+    height: 0%;
+  }
+}
+
+.dropDownExit {
+  animation: growUp 0.5s ease-out forwards;
+}
+
+.leaderBoardFade {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes btnClick {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.2) translateY(30px);
+    opacity: 0;
+  }
+}
+.buttonAnim {
+  animation: btnClick 0.5s forwards;
+}
+
+@keyframes headerTransitionright {
+  0% {
+    transform: scaleX(1) translateX(0%);
+  }
+
+  20% {
+    transform: scaleX(0.8) translateX(0%);
+  }
+  80% {
+    transform: scaleX(0.8) translateX(120%);
+  }
+  100% {
+    transform: scaleX(1) translateX(100%);
+  }
+}
+.headerAnimRight {
+  animation: headerTransitionright 1s ease-in-out
+    forwards;
+}
+@keyframes headerTransitionleft {
+  0% {
+    transform: scaleX(1) translateX(100%);
+    opacity: 1;
+  }
+
+  20% {
+    transform: scaleX(0.8) translateX(120%);
+  }
+  80% {
+    transform: scaleX(0.8) translateX(0%);
+  }
+  100% {
+    transform: scaleX(1) translateX(0%);
+    opacity: 1;
+  }
+}
+.headerAnimLeft {
+  animation: headerTransitionleft 1s ease forwards;
+}
