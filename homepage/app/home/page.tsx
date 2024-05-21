@@ -13,25 +13,26 @@ import useDeviceDetection from "../hooks/UseDetection"
 import AnimatedCard from "../components/animatedCard"
 import Link from "next/link"
 import MobilePage from "../components/mobilePage/mobileHome"
+import SlideShow from "../components/SlideShow/slideShow";
 
 
 
 export default function Client() {
   const [isMobile, setIsMobile] = useState(false)
   const device = useDeviceDetection()
-    useEffect(() => {
-      if (device == "Mobile") {
-        setIsMobile(true)
-      } else {
-        setIsMobile(false)
-      }
-    }, [device])
-  
+  useEffect(() => {
+    if (device == "Mobile") {
+      setIsMobile(true)
+    } else {
+      setIsMobile(false)
+    }
+  }, [device])
+
 
   return (
-    <>{isMobile? <MobilePage/> : <></> }
+    <>{isMobile ? <MobilePage /> : <div className="flex justify-center items-center w-full h-full"><SlideShow /></div>}
     </>
-   
+
   )
 }
 
