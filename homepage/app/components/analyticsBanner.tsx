@@ -213,7 +213,7 @@ export const AnalyticsCardLandingVertica: React.FC<AnalyticsCardButtonLeftProps>
       style={{
         width: "100%",
         border: "none",
-        boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
+
         height: "30vh",
         scrollSnapAlign: "start",
         backgroundColor: "#000013"
