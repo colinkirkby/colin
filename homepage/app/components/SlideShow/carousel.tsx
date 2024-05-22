@@ -41,7 +41,7 @@ export default function Carousel({
   return (
     <>
       <div id="Carousel">
-        <div className=" relative m-auto w-[1000px] h-[400px]">
+        <div className=" relative m-auto w-[1000px] h-[416px]">
           <div className="flex overflow-hidden">
             {items.map((item, index) => (
               <div
@@ -59,7 +59,7 @@ export default function Carousel({
           <button
             disabled={activeIndex === 0}
             onClick={goPrevious}
-            className=" pl-[5px] pr-[10px] absolute z-40 h-4/5 left-0 top-[25vh]"
+            className=" pl-[5px] pr-[10px] absolute z-40 h-4/5 left-0 top-[50%]"
             style={{
               transform: 'translateY(-50%)',
             }}
@@ -85,7 +85,7 @@ export default function Carousel({
           <button
             disabled={activeIndex === items.length - 1}
             onClick={goNext}
-            className=" pr-[10px] pl-[3px] m-y-auto absolute z-40 h-4/5 right-0 top-[25vh]"
+            className=" pr-[10px] pl-[3px] m-y-auto absolute z-40 h-4/5 right-0 top-[50%]"
             style={{
               transform: 'translateY(-50%)',
             }}
