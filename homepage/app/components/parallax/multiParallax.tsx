@@ -26,13 +26,15 @@ export default function MultilayerParallax() {
         }
     }, [device])
 
+
+
     const handleUpClick = () => {
         setUpAnimation(styles.buttonAnim);
-
         setTimeout(() => {
+
             setShowUp(false)
-            setDownAnimation(styles.dropDownFade);
             setTimeout(() => {
+                setDownAnimation(styles.dropDownFade);
                 setShowDown(true);
             }, 4000);
 
@@ -41,17 +43,17 @@ export default function MultilayerParallax() {
 
     };
     const handleDownClick = () => {
-
         setDownAnimation(styles.buttonAnim);
-        setUpAnimation(styles.dropDownFade)
+        setUpAnimation(styles.dropDownFade);
+
         setTimeout(() => {
             setShowDown(false)
-            setTimeout(() => {
-                setShowUp(true);
-            }, 4000);
-
 
         }, 500)
+        setTimeout(() => {
+            setShowUp(true);
+        }, 4500);
+
 
 
     };
@@ -79,17 +81,19 @@ export default function MultilayerParallax() {
             { width: "100%", height: "100%", alignContent: "space-between" }}>
             {isMobile ? <></> : <div className='flex justify-center items-center content-center z-[80]  my-20 '>
                 {!showUp ? <div className="h-10" ></div> :
-                    <button className={`${upAnimation} font-bold text-white z-[80] rounded-full px-3 pt-1.5 transform hover:scale-105`} style={{ background: " linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.0) 110%), rgb(4 ,47, 46,1)" }} onClick={() => {
-                        setActiveIndex(activeIndex - 1);
-                        console.log(activeIndex);
-                        handleUpClick();
-                        setTimeout(() => { setShowDown(true) }, 9000)
-                    }}>^ </button>}
+                    <button className={`${upAnimation} font-bold text-white z-[80] rounded-full px-3 pt-1.5 transform hover:scale-105`} style={{ background: " linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.0) 110%), rgb(4 ,47, 46,1)" }}
+                        onClick={() => {
+                            setActiveIndex(activeIndex - 1);
+                            console.log(activeIndex);
+                            handleUpClick();
+
+                        }}>^ </button>}
             </div>
             }
             {isMobile && showUp && <div className='flex justify-center items-center content-center z-[80]  '>
                 <button className={`${upAnimation} font-bold text-white z-[80] rounded-3xl p-3 transform hover:scale-105`} style={{ background: " linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.0) 110%),rgb(4 ,47, 46,1)" }} onClick={() => {
-                    setActiveIndex(activeIndex - 1); handleUpClick();
+                    setActiveIndex(activeIndex - 1);
+                    handleUpClick();
                 }}>
                     ^
                 </button>
@@ -109,38 +113,41 @@ export default function MultilayerParallax() {
                 <h1 className={`font-bold text-white text-7xl md:text-9xl relative z-30`} > Welcome </h1>
             </motion.div>
             <div className='flex justify-center items-center content-center z-[80] my-20'>
-                {!showDown ? <div className="h-10 pb-12" ></div> :
+                {!showDown ?
+                    <div className="h-10 pb-12" ></div> :
                     <button className={`${downAnimation} h-10 font-bold text-white z-[80] pb-12 transition hover:scale-105 `} onClick={() => {
                         setActiveIndex(activeIndex + 1);
                         handleDownClick();
 
 
 
-                    }}>ENTER</button>}</div>
-            <img className="absolute inset-0 z-[60]" src="/dusk1.webp" style={{
-                width: "100vw", transition: 'transform 3s ease-in-out .2s',
+                    }}>ENTER
+                    </button>}
+            </div>
+            <img className="absolute inset-0 z-[60]" src="/dusk1.png" style={{
+                width: "100vw", transition: 'transform 5s ease-in-out .1s',
                 transform: `translateX(0%) translateY(-${(activeIndex * 35) + 7}%)`
             }} />
-            <img className="absolute inset-0 z-50" src="/dusk2.webp" style={{
-                width: "100vw", transition: 'transform 3s ease-in-out .2s',
+            <img className="absolute inset-0 z-50" src="/dusk2.png" style={{
+                width: "100vw", transition: 'transform 5s ease-in-out .2s',
                 transform: `translateX(0%) translateY(-${(activeIndex * 20) + 7}%)`
             }} />
-            <img className="absolute inset-0 z-30" src="/dusk3.webp" style={{
-                width: "100vw", transition: 'transform 3s ease-in-out .2s',
+            <img className="absolute inset-0 z-30" src="/dusk3.png" style={{
+                width: "100vw", transition: 'transform 5s ease-in-out .1s',
                 transform: `translateX(0%) translateY(-${(activeIndex * 15) + 7}%)`
             }} />
-            <img className="absolute inset-0 z-20" src="/dusk4.webp" style={{
-                width: "100vw", transition: 'transform 3s ease-in-out .2s',
+            <img className="absolute inset-0 z-20" src="/dusk4.png" style={{
+                width: "100vw", transition: 'transform 5s ease-in-out .1s',
                 transform: `translateX(0%) translateY(-${(activeIndex * 12) + 7}%)`
             }} />
-            <img className="absolute inset-0 z-10" src="/dusk5.webp" style={{
-                width: "100vw", transition: 'transform 3s ease-in-out .2s',
+            <img className="absolute inset-0 z-10" src="/dusk5.png" style={{
+                width: "100vw", transition: 'transform 5s ease-in-out .1s',
                 transform: `translateX(0%) translateY(-${(activeIndex * 10) + 7}%)`
             }} />
 
             {!isMobile ? (<div className="absolute flex w-4/5 h-screen  flex-col justify-center items-center content-center z-[70]  my-10 text-white mx-[10%]" style={{
 
-                transition: 'transform 4s ease-in-out .2s',
+                transition: 'transform 6s ease-in-out .2s',
                 transform: `translateX(0%) translateY(${((activeIndex - 1) * -200)}%)`
             }}>
                 <div className={`${exitAnimation}`}>

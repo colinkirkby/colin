@@ -207,7 +207,7 @@ export const AnalyticsCardLandingVertica: React.FC<AnalyticsCardButtonLeftProps>
   footerText
 }) => {
   return (
-    <Card
+    <div
       style={{
         width: "100%",
         border: "none",
@@ -232,7 +232,8 @@ export const AnalyticsCardLandingVertica: React.FC<AnalyticsCardButtonLeftProps>
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            paddingInline: "40px"
+            paddingInline: "40px",
+            maxWidth: "900px"
           }}
         >
 
@@ -264,6 +265,6 @@ export const AnalyticsCardLandingVertica: React.FC<AnalyticsCardButtonLeftProps>
         </div>
 
       </div>
-    </Card>
+    </div>
   )
 }

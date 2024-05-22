@@ -68,7 +68,7 @@
 }
 
 .dropDownExit {
-  animation: growUp 0.5s ease-out forwards;
+  animation: growUp 0.5s forwards;
 }
 
 .leaderBoardFade {
@@ -91,7 +91,7 @@
   }
 }
 .buttonAnim {
-  animation: btnClick 0.5s forwards;
+  animation: btnClick 0.5s ease-in-out forwards;
 }
 
 @keyframes headerTransitionright {
