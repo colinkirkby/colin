@@ -15,6 +15,11 @@ const nextConfig = {
         destination: '/landing',
         permanent: true,
       },
+      {
+        source: '/resume',
+        destination: '/landing',
+        permanent: true,
+      },
     ];
   },
 };
