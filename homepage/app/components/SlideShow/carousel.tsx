@@ -46,7 +46,7 @@ export default function Carousel({
             {items.map((item, index) => (
               <div
                 key={index}
-                className="relative z-30 min-w-full h-[500px] px-[8vw] mt-[1vh]"
+                className="relative z-30 min-w-full h-[500px] px-[100px] mt-[20px]"
                 style={{
                   transition: 'transform 0.5s ease-in-out .1s',
                   transform: `translateX(-${activeIndex * 100}%)`,
