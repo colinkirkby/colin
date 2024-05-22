@@ -79,7 +79,7 @@ export default function MultilayerParallax() {
             { width: "100%", height: "100%", alignContent: "space-between" }}>
             {isMobile ? <></> : <div className='flex justify-center items-center content-center z-[80]  my-20 '>
                 {!showUp ? <div className="h-10" ></div> :
-                    <button className={`${upAnimation} font-bold text-white z-[80] rounded-full px-3 pt-1.5 transform hover:scale-105`} style={{ background: " linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.0) 110%), rgb( 199 70 30)" }} onClick={() => {
+                    <button className={`${upAnimation} font-bold text-white z-[80] rounded-full px-3 pt-1.5 transform hover:scale-105`} style={{ background: " linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.0) 110%), rgb(4 ,47, 46,1)" }} onClick={() => {
                         setActiveIndex(activeIndex - 1);
                         console.log(activeIndex);
                         handleUpClick();
@@ -88,7 +88,7 @@ export default function MultilayerParallax() {
             </div>
             }
             {isMobile && showUp && <div className='flex justify-center items-center content-center z-[80]  '>
-                <button className={`${upAnimation} font-bold text-white z-[80] rounded-3xl p-3 transform hover:scale-105`} style={{ background: " linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.0) 110%), rgb( 199 70 30)" }} onClick={() => {
+                <button className={`${upAnimation} font-bold text-white z-[80] rounded-3xl p-3 transform hover:scale-105`} style={{ background: " linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.0) 110%),rgb(4 ,47, 46,1)" }} onClick={() => {
                     setActiveIndex(activeIndex - 1); handleUpClick();
                 }}>
                     ^
@@ -150,7 +150,7 @@ export default function MultilayerParallax() {
                         bodyText="This is a collection of some of my work"
                         footerText="Full stack software engineer located in Vancouver, British Columbia. Recent graduate of Simon Fraser University with a Bachelor of Science in Computer Science and Software Engineering. Specialized in JavaScript and typescript React development with prior experience in building customer-facing applications." />
                 </div>
-                <button className={`${outAnimation} text-white z-[200] mt-20 rounded-3xl p-3 transform hover:scale-105`} style={{ background: " linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.0) 110%), rgb( 199 70 30)" }} onClick={() => { handleExitClick() }}>  VIEW PORTFOLIO  </button>
+                <button className={`${outAnimation} text-white z-[200] mt-20 rounded-3xl p-3 transform hover:scale-105`} style={{ background: " linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.0) 110%), rgb(4 ,47, 46,1)" }} onClick={() => { handleExitClick() }}>  VIEW PORTFOLIO  </button>
             </div>) :
                 <div className={`absolute flex w-full h-screen flex-col  justify-center items-center content-center z-[70]  text-white `} style={{
 

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 
 
 type CarouselProps = {
-
+  items: JSX.Element[]
 };
 
 type DoughnutData = {
@@ -21,14 +21,14 @@ const kFormatter = (num: number) => {
 };
 
 export default function Carousel({
+  items
 
 }: CarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
 
-  const items: JSX.Element[] = [<div> this is an element</div>, <div> this is another element</div>, <div> this is an element 3 </div>, <div> this is another element 4</div>
 
-  ];
+
 
   const goPrevious = () => {
     setActiveIndex(prevIndex => (prevIndex - 1 + items.length) % items.length);
@@ -46,7 +46,7 @@ export default function Carousel({
             {items.map((item, index) => (
               <div
                 key={index}
-                className="relative z-30 min-w-full h-[25vh] px-[8vw] mt-[1vh]"
+                className="relative z-30 min-w-full h-[500px] px-[8vw] mt-[1vh]"
                 style={{
                   transition: 'transform 0.5s ease-in-out .1s',
                   transform: `translateX(-${activeIndex * 100}%)`,
@@ -59,7 +59,7 @@ export default function Carousel({
           <button
             disabled={activeIndex === 0}
             onClick={goPrevious}
-            className=" pl-[5px] pr-[10px] absolute z-40 h-4/5 left-0 top-[13vh]"
+            className=" pl-[5px] pr-[10px] absolute z-40 h-4/5 left-0 top-[25vh]"
             style={{
               transform: 'translateY(-50%)',
             }}
@@ -85,7 +85,7 @@ export default function Carousel({
           <button
             disabled={activeIndex === items.length - 1}
             onClick={goNext}
-            className=" pr-[10px] pl-[3px] m-y-auto absolute z-40 h-4/5 right-0 top-[13vh]"
+            className=" pr-[10px] pl-[3px] m-y-auto absolute z-40 h-4/5 right-0 top-[25vh]"
             style={{
               transform: 'translateY(-50%)',
             }}
