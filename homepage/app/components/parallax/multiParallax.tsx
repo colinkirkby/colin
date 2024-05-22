@@ -155,7 +155,7 @@ export default function MultilayerParallax() {
                         imagePath="logo.png"
                         headerText=" Welcome to Colin's Portfolio"
                         bodyText="This is a collection of some of my work"
-                        footerText="Full stack software engineer located in Vancouver, British Columbia. Recent graduate of Simon Fraser University with a Bachelor of Science in Computer Science and Software Engineering. Specialized in JavaScript and typescript React development with prior experience in building customer-facing applications." />
+                        footerText="I'm a full stack software engineer located in Vancouver, British Columbia. I recently graduated from Simon Fraser University with a Bachelor of Science in Computer Science and Software Engineering. I've Specialized in JavaScript and typescript React development with prior experience in building customer-facing applications as well as experience in databases, networking and backend development." />
                 </div>
                 <button className={`${outAnimation} text-white z-[200] mt-20 rounded-3xl p-3 transform hover:scale-105`} style={{ background: " linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.0) 110%), rgb(4 ,47, 46,1)" }} onClick={() => { handleExitClick() }}>  VIEW PORTFOLIO  </button>
             </div>) :
