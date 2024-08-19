@@ -38,7 +38,7 @@ export default function SlideShow() {
     const work: JSX.Element[] = [<AnalyticsCardButtonLeft
         imagePath="/ct_text_cropped.png"
         headerText="CarTracked"
-        bodyText="Designed and built a mobile version of the cartracked application as well as redesigning and rebuilding significant portions of the desktop application."
+        bodyText="Redesigned and implemented the majority of the companies web application. Designed and built a mobile version of application implementing high quality mobile friendly user interfaces with modern gesture functionality"
         backgroundImg="/cartrackedBackground.png"
         buttonText="View Demo"
         buttonLink="https://www.loom.com/share/e06549ba2f5347eb95672ad52a765a5c"
@@ -124,7 +124,7 @@ export default function SlideShow() {
                 {
                     showWork &&
                     <div className={`${workAnim} overflow-hidden`}>
-                        <div className="width-[1000px] h-[500px]  p-7 " style={{
+                        <div className="w-[1800px] h-[1000px]  p-7 " style={{
                             transition: 'transform 2s ease-in-out .2s',
                             transform: `translateX(0%) translateY(${-((activeSlides) * 115)}%)`
                         }}>
@@ -139,7 +139,7 @@ export default function SlideShow() {
                 {
                     showProjects &&
                     <div className={`${projectAnim} overflow-hidden`}>
-                        <div className="width-[1000px] h-[500px]  p-7 " style={{
+                        <div className="width-[1800px] h-[1000px]  p-7 " style={{
                             transition: 'transform 2s ease-in-out .2s',
                             transform: `translateX(0%) translateY(${-((activeSlides) * 115)}%)`
                         }}>

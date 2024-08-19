@@ -32,7 +32,7 @@ export const AnalyticsCardButtonLeft: React.FC<
   buttonLink, buttonText
 }) => {
     return (
-      <div className=" text-black "
+      <div className=" text-black h-full"
         style={{
           width: "100%",
           border: "none",
@@ -47,13 +47,13 @@ export const AnalyticsCardButtonLeft: React.FC<
             flexDirection: "row",
             alignItems: "center",
             backgroundSize: "cover",
-            height: "420px",
+            height: "800px",
             overflow: "hidden",
             backgroundImage: "url(" + backgroundImg + ")",
             justifyContent: "center"
           }}
         >
-          <div className="flex w-[600px] h-full justify-center " style={{ background: "linear-gradient(90deg, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 95%)" }}>
+          <div className="flex w-[800px] h-full justify-center " style={{ background: "linear-gradient(90deg, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 95%)" }}>
             <div className=" flex m-auto w-[200px] h-[160px] bg-white rounded-2xl shadow-md">
               <img className=" m-auto w-[200px]  rounded-2xl" src={imagePath} alt={headerText} style={{ width: "100%" }} />
             </div>
@@ -61,7 +61,7 @@ export const AnalyticsCardButtonLeft: React.FC<
 
 
           <div
-            className="pl-20 py-16  h-full w-[500px]"
+            className="pl-20 py-16  h-full w-[700px] justify-center"
             style={{
 
               display: "flex",
