@@ -87,7 +87,7 @@ export default function SlideShow() {
                 animate="visible"
                 transition={{ duration: 4, delay: 0 }}
             >
-                <div id="headers" className="relative flex flex-col gap-2 w-[403px] z-[100] mx-20">
+                <div id="headers" className="relative flex flex-col gap-2 text-sm w-[371px] z-[100] mx-20">
                     <div className=" flex flex-row ">
                         <button className=" content-center justify-center mx-9" onClick={() => {
                             if (activeIndex !== 0) {
@@ -124,7 +124,7 @@ export default function SlideShow() {
                 {
                     showWork &&
                     <div className={`${workAnim} overflow-hidden`}>
-                        <div className="w-[1800px] h-[1000px]  p-7 " style={{
+                        <div className="min-w-[1800px] max-w-[1800px] h-[1000px]  p-7 " style={{
                             transition: 'transform 2s ease-in-out .2s',
                             transform: `translateX(0%) translateY(${-((activeSlides) * 115)}%)`
                         }}>
@@ -139,7 +139,7 @@ export default function SlideShow() {
                 {
                     showProjects &&
                     <div className={`${projectAnim} overflow-hidden`}>
-                        <div className="width-[1800px] h-[1000px]  p-7 " style={{
+                        <div className="min-w-[1800px] max-w-[1800px] h-[1000px]  p-7 " style={{
                             transition: 'transform 2s ease-in-out .2s',
                             transform: `translateX(0%) translateY(${-((activeSlides) * 115)}%)`
                         }}>
