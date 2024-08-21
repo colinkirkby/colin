@@ -89,7 +89,7 @@ export default function SlideShow() {
             >
                 <div id="headers" className="relative flex flex-col gap-2 text-sm w-[371px] z-[100] mx-20">
                     <div className=" flex flex-row ">
-                        <button className=" content-center justify-center mx-9" onClick={() => {
+                        <button className=" content-center justify-center mx-auto" onClick={() => {
                             if (activeIndex !== 0) {
                                 setActiveIndex(0); setBarAnimation(styles.headerAnimLeft);
                                 handleWorkClick()
@@ -101,7 +101,7 @@ export default function SlideShow() {
                             </h1>
                         </button>
 
-                        <button className=" content-center justify-center mx-9" onClick={() => {
+                        <button className=" content-center justify-center mx-auto" onClick={() => {
                             if (activeIndex !== 1) {
                                 setActiveIndex(1);
                                 setBarAnimation(styles.headerAnimRight);
@@ -124,7 +124,7 @@ export default function SlideShow() {
                 {
                     showWork &&
                     <div className={`${workAnim} overflow-hidden`}>
-                        <div className="min-w-[1800px] max-w-[1800px] h-[1000px]  p-7 " style={{
+                        <div className="min-w-[1800px] max-w-[60vw] h-[1000px] max-h-[80vh]  p-7 " style={{
                             transition: 'transform 2s ease-in-out .2s',
                             transform: `translateX(0%) translateY(${-((activeSlides) * 115)}%)`
                         }}>
@@ -139,7 +139,7 @@ export default function SlideShow() {
                 {
                     showProjects &&
                     <div className={`${projectAnim} overflow-hidden`}>
-                        <div className="min-w-[1800px] max-w-[1800px] h-[1000px]  p-7 " style={{
+                        <div className="min-w-[1800px] max-w-[60vw] h-[1000px] max-h-[80vh]  p-7 " style={{
                             transition: 'transform 2s ease-in-out .2s',
                             transform: `translateX(0%) translateY(${-((activeSlides) * 115)}%)`
                         }}>

@@ -48,6 +48,7 @@ export const AnalyticsCardButtonLeft: React.FC<
             alignItems: "center",
             backgroundSize: "cover",
             height: "800px",
+            maxHeight: "65vh",
             overflow: "hidden",
             backgroundImage: "url(" + backgroundImg + ")",
             justifyContent: "center"

@@ -41,12 +41,12 @@ export default function Carousel({
   return (
     <>
       <div id="Carousel">
-        <div className=" relative m-auto w-[1600px] h-[800px]">
+        <div className=" relative m-auto w-[1600px] max-h-[65vh] h-[800px]">
           <div className="flex overflow-hidden">
             {items.map((item, index) => (
               <div
                 key={index}
-                className="relative z-30 min-w-full h-[800px] px-[100px] mt-[20px]"
+                className="relative z-30 min-w-full h-[800px] max-h-[65vh] px-[100px] mt-[20px]"
                 style={{
                   transition: 'transform 0.5s ease-in-out .1s',
                   transform: `translateX(-${activeIndex * 100}%)`,
