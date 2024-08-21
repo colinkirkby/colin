@@ -132,14 +132,6 @@ export default function MultilayerParallax() {
                 width: "100vw", transition: 'transform 5s ease-in-out .2s',
                 transform: `translateX(0%) translateY(-${(activeIndex * 20) + 7}%)`
             }} />
-            <img className="absolute inset-0 z-30" src="/dusk3.png" style={{
-                width: "100vw", transition: 'transform 5s ease-in-out .1s',
-                transform: `translateX(0%) translateY(-${(activeIndex * 15) + 7}%)`
-            }} />
-            <img className="absolute inset-0 z-20" src="/dusk4.png" style={{
-                width: "100vw", transition: 'transform 5s ease-in-out .1s',
-                transform: `translateX(0%) translateY(-${(activeIndex * 12) + 7}%)`
-            }} />
             <img className="absolute inset-0 z-10" src="/dusk5.png" style={{
                 width: "100vw", transition: 'transform 5s ease-in-out .1s',
                 transform: `translateX(0%) translateY(-${(activeIndex * 10) + 7}%)`
